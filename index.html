@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meowlands</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; }
+    .wave-bg {
+      background: linear-gradient(145deg, #2c2c54, #3a0ca3, #7209b7, #f72585);
+      background-size: 600% 600%;
+      animation: gradientShift 20s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="text-white wave-bg min-h-screen flex flex-col items-center justify-center px-6 py-12">
+  <header class="text-center mb-12">
+    <img src="/meowland_logo_ok.png" alt="Meowlands Logo" class="w-32 h-32 mx-auto mb-4 rounded-full shadow-lg">
+    <h1 class="text-4xl font-extrabold tracking-wide">Meowlands</h1>
+    <p class="text-lg mt-2">NFT Project · Abstract Art · Crypto-Philanthropy</p>
+  </header>
+
+  <main class="grid gap-8 max-w-5xl grid-cols-1 md:grid-cols-2">
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-yellow-300">Concept</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>Unique abstract art</li>
+        <li>20% of profits to animal shelters</li>
+        <li>Feline imagination & parallel worlds</li>
+      </ul>
+    </section>
+
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-purple-300">Solana</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>Mint on Solana</li>
+        <li>Audited smart contract</li>
+        <li>Utility: access, community & events</li>
+      </ul>
+    </section>
+
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-orange-300">Community</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>Exclusive Discord server</li>
+        <li>Whitelist for early holders</li>
+      </ul>
+    </section>
+
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-pink-300">Philosophy</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>"Art with soul. Cats with a voice."</li>
+        <li>Transparent, community-first project</li>
+      </ul>
+    </section>
+
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-blue-300">Roadmap</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>Phase 1: Art, community, whitelist</li>
+        <li>Phase 2: Mint & reveal</li>
+      </ul>
+    </section>
+
+    <section class="bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-green-300">Website</h2>
+      <ul class="mt-2 list-disc list-inside">
+        <li>Rebranding of trumpxelon.org</li>
+        <li>Minimalist & responsive from day 1</li>
+      </ul>
+    </section>
+
+    <section class="col-span-1 md:col-span-2 bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-red-300 text-center mb-4">NFT Preview</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <img src="/meowland1.png" alt="NFT 1" class="rounded-lg shadow-md">
+        <img src="/meowland2_fixed.png" alt="NFT 2" class="rounded-lg shadow-md">
+        <img src="/meowland3.png" alt="NFT 3" class="rounded-lg shadow-md">
+        <img src="/meowland4.png" alt="NFT 4" class="rounded-lg shadow-md">
+        <img src="/meowland5.png" alt="NFT 5" class="rounded-lg shadow-md">
+      </div>
+    </section>
+
+    <section class="col-span-1 md:col-span-2 bg-white/10 p-6 rounded-2xl shadow-md">
+      <h2 class="text-xl font-bold text-cyan-300 text-center mb-4">Mindmap</h2>
+      <div class="flex justify-center">
+        <img src="/meowlands_mindmap.png" alt="Meowlands Mindmap" class="rounded-lg shadow-lg max-w-full">
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-12 text-center">
+    <p class="text-md">Follow us: <a href="https://twitter.com/MeowlandsNFT" class="underline text-blue-200">@MeowlandsNFT</a></p>
+    <p class="text-md mt-1">Visit: <a href="https://trumpxelon.org" class="underline text-blue-200">www.trumpxelon.org</a></p>
+    <p class="text-xs mt-2 text-white/60">Site created by the Meowlands community – Powered by Solana</p>
+  </footer>
+</body>
+</html>
