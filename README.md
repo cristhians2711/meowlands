@@ -1,39 +1,36 @@
-# 🐾 Meowlands — NFT Project Website
+# 🐾 Meowlands – Abstract NFT Project on Solana
 
-Welcome to the official landing page for **Meowlands**, an NFT collection that blends abstract art, feline soul, and crypto-philanthropy.  
-🌐 Live at: [https://meowlands.org](https://meowlands.org)
+**Meowlands** is a soulful 1/1 NFT project that blends feline spirit, abstract art, and Web3 culture — all built on Solana.
 
----
+## 🔗 Live Website
+
+👉 [https://meowlands.org](https://meowlands.org)
+
+## 📂 Pages included
+
+- [`index.html`](https://meowlands.org) – Main landing page
+- [`/faq.html`](https://meowlands.org/faq.html) – Frequently Asked Questions
+- [`/contact.html`](https://meowlands.org/contact.html) – Team & Contact Info
+- [`/gallery.html`](https://meowlands.org/gallery.html) – Full NFT Gallery
+- [`/terms.html`](https://meowlands.org/terms.html) – Terms & Privacy
+- [`/sitemap.xml`](https://meowlands.org/sitemap.xml) – Sitemap for search engines
+- [`/robots.txt`](https://meowlands.org/robots.txt) – Web crawler permissions
 
 ## 🎨 About the Project
 
-**Meowlands** is a web3-native project built on Solana, where 20% of all profits are donated to animal shelters.  
-The site showcases:
+- 5 one-of-one abstract feline NFTs
+- Deployed on Solana, trading on Tensor
+- 20% of all proceeds go to real-world animal shelters
+- Created with purpose, art, and soul
 
-- Abstract, soulful NFT previews
-- Roadmap & community mission
-- Full responsive layout
-- Mindmap-based branding
-- Email & social integrations
+## 📬 Contact
 
----
+- General: [hello@meowlands.org](mailto:hello@meowlands.org)
+- Partnerships: [partners@meowlands.org](mailto:partners@meowlands.org)
+- Press & Media: [media@meowlands.org](mailto:media@meowlands.org)
 
-## 🚀 Features
-
-- ⚡ Built with TailwindCSS
-- 🐱 Powered by static HTML (lightweight & fast)
-- 🌐 Custom domain via GitHub Pages + Namecheap
-- 📱 100% responsive design
-- 🔐 Easy to deploy, SEO-ready
+Follow us on [Twitter](https://twitter.com/MeowlandsNFT) and [join our Discord](https://discord.gg/jFST42z5) to be part of the Meowverse.
 
 ---
 
-## 🔧 Deployment
-
-The site is hosted via **GitHub Pages** and connected to **meowlands.org** through Namecheap DNS.
-
-To deploy locally:
-
-```bash
-git clone https://github.com/yourusername/meowlands-landing.git
-cd meowlands-landing
+**Built with Tailwind CSS & love.**  
