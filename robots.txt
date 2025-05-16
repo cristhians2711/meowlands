@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://meowlands.org/sitemap.xml
