@@ -109,5 +109,16 @@
 <a class="text-amber-300 underline" href="/contact.html">Contact</a>
 <a class="text-amber-300 underline" href="/gallery.html">Gallery</a><a class="text-amber-300 underline" href="/terms.html">Terms</a></div>
 </footer>
-</body>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function (reg) {
+        console.log('Service Worker registered ✅', reg);
+      }, function (err) {
+        console.log('Service Worker failed ❌', err);
+      });
+  });
+}
+</script></body>
 </html>
