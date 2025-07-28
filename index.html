@@ -1,114 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meowlands - Meowen</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap">
-  <style>
-    body {
-      background-color: #05060f;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      padding: 20px;
-    }
-    header img {
-      width: 160px;
-      height: auto;
-    }
-    h1 {
-      margin-top: 10px;
-      font-size: 2rem;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      margin-top: 10px;
-    }
-    .mint-button {
-      background-color: #8a2be2;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 20px 0;
-    }
-    .mint-button:hover {
-      background-color: #a66cff;
-    }
-    .gallery-section {
-      padding: 40px 20px;
-    }
-    .gallery-title {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #8a2be2;
-    }
-    footer {
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="meowlands_logo.gif" alt="Meowlands Logo">
-    <h1>Meowlands - Meowen</h1>
-    <div class="countdown" id="countdown"></div>
-    <a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank">
-      <button class="mint-button">Mint on OpenSea</button>
-    </a>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meowlands - Meowen</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #070c16;
+        font-family: 'Montserrat', sans-serif;
+        color: #ffffff;
+        text-align: center;
+      }
+      header img {
+        margin-top: 30px;
+        width: 180px;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 5px;
+        background: linear-gradient(90deg, #ff6ec4, #7873f5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .mint-button {
+        background-color: #ff6ec4;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        margin: 20px auto;
+        cursor: pointer;
+        transition: 0.3s;
+        display: inline-block;
+      }
+      .mint-button:hover {
+        background-color: #e85ab6;
+      }
+      .countdown {
+        font-size: 20px;
+        margin: 10px 0;
+        color: #bbbbbb;
+      }
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 10px;
+      }
+      .gallery img {
+        width: 220px;
+        height: 220px;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+      section {
+        margin: 40px 20px;
+      }
+      .subsection {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="meowlands_logo.gif" alt="Meowlands Logo" />
+      <h1>Meowlands - Meowen</h1>
+      <p class="countdown" id="countdown"></p>
+      <a class="mint-button" href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank">Mint Now</a>
+    </header>
 
-  <section class="gallery-section">
-    <div class="gallery-title">Ultra Rare Previews</div>
-    <div class="gallery">
-      <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V1_Cosmic_Crown.png" alt="Meowen V1 Cosmic Crown">
-      <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V2_Royal_Nebula.png" alt="Meowen V2 Royal Nebula">
-      <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V3_Frost_Rider.png" alt="Meowen V3 Frost Rider">
-      <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V4_Rebel_Dawn.png" alt="Meowen V4 Rebel Dawn">
-    </div>
-  </section>
+    <section>
+      <h2>Ultra Rare Preview</h2>
+      <div class="gallery">
+        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V1_Cosmic_Crown.png" alt="Ultra Rare 1" />
+        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V2_Royal_Nebula.png" alt="Ultra Rare 2" />
+        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V3_Frost_Rider.png" alt="Ultra Rare 3" />
+        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V4_Rebel_Dawn.png" alt="Ultra Rare 4" />
+      </div>
+    </section>
 
-  <footer>
-    © 2025 Meowlands. 20% of profits go to cat shelters. All rights reserved.
-  </footer>
+    <section>
+      <h2>Roadmap</h2>
+      <div class="subsection">
+        <p><strong>Fase 1:</strong> Lanzamiento de la colección Meowen en Ethereum (28 de agosto)</p>
+        <p><strong>Fase 2:</strong> Airdrops, reveal dinámico y recompensas para holders</p>
+        <p><strong>Fase 3:</strong> Expansión de lore, merchandising y segunda colección</p>
+        <p><strong>Fase 4:</strong> Integración en videojuegos y alianzas Web3</p>
+      </div>
+    </section>
 
-  <script>
-    const countdown = document.getElementById('countdown');
-    const targetDate = new Date('2025-08-28T21:00:00Z');
-    const timer = setInterval(() => {
-      const now = new Date();
-      const distance = targetDate - now;
-      if (distance <= 0) {
-        countdown.innerHTML = 'The Mint is Live!';
-        clearInterval(timer);
-      } else {
+    <section>
+      <h2>Team</h2>
+      <div class="subsection">
+        <p><strong>Titiano</strong> — Fundador creativo. Diseñador, escritor de lore y estratega Web3.</p>
+        <p><strong>Cristhians2711</strong> — Full-stack dev y blockchain wizard. Responsable del GitHub y deploy del contrato.</p>
+        <p><strong>GPT Assistant</strong> — Soporte operativo y técnico 24/7 (IA).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Litepaper</h2>
+      <div class="subsection">
+        <p>Meowlands es una experiencia NFT que combina estética adorable, utilidad real y compromiso social. Cada NFT contribuye a donaciones reales a protectoras de animales. Ultra raros, reveal, utilidad futura y narrativa propia. Todo en un universo visual único.</p>
+      </div>
+    </section>
+
+    <script>
+      const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
+      const countdown = document.getElementById("countdown");
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((distance % (1000 * 60)) / 1000);
-        countdown.innerHTML = `Minting in: ${days}d ${hours}h ${mins}m ${secs}s`;
-      }
-    }, 1000);
-  </script>
-</body>
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdown.textContent = `Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    </script>
+  </body>
 </html>
