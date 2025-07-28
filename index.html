@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meowlands</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/png" href="/meowland_logo_ok.png" />
-  <meta property="og:title" content="Meowlands — NFT Project with Soul" />
-  <meta property="og:description" content="Abstract art. Crypto philanthropy. 20% of profits go to animal shelters. Join the Meowverse." />
-  <meta property="og:image" content="https://meowlands.org/preview.png" />
-  <meta property="og:url" content="https://meowlands.org" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <title>Meowlands - Meowen</title>
+  <meta name="description" content="Adopt your warrior. Fund a shelter. Mint your Meowen NFT now on Ethereum." />
+  <link rel="icon" href="/assets/logo.png" type="image/png">
   <style>
-    body { font-family: sans-serif; }
-    .nft-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-    .nft-hover:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    header {
+      background: url('/assets/banner.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+    .mint-btn {
+      background: #ff00cc;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    .info-section {
+      padding: 50px 20px;
+    }
+    .info-section h2 {
+      color: #ffcc00;
+    }
+    footer {
+      padding: 30px;
+      background: #111;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
-  <link rel="manifest" href="/manifest.json" />
 </head>
-<body class="bg-gray-900 text-white p-6">
-  <nav class="bg-gray-950 text-white py-4 px-6 flex justify-between items-center shadow-md rounded-xl mb-6 sticky top-0 z-50">
-    <div class="text-xl font-bold text-amber-300">Meowlands</div>
-    <div class="space-x-6 text-lg">
-      <a class="hover:underline text-gray-200" href="/">Home</a>
-      <a class="hover:underline text-gray-200" href="/gallery.html">Gallery</a>
-      <a class="hover:underline text-gray-200" href="/faq.html">FAQ</a>
-      <a class="hover:underline text-gray-200" href="/contact.html">Contact</a>
-      <a class="text-blue-400 hover:underline" href="https://twitter.com/MeowlandsNFT" target="_blank">Twitter</a>
-      <a class="text-indigo-400 hover:underline" href="https://discord.gg/jFST42z5" target="_blank">Discord</a>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg font-bold" href="https://www.tensor.trade/trade/meowlands" target="_blank">Mint Now</a>
-    </div>
-  </nav>
-  <header class="text-center mb-10">
-    <img alt="Meowlands Logo" class="mx-auto w-32 h-32 mb-4 rounded-full shadow-lg" src="/meowland_logo_ok.png" />
-    <h1 class="text-5xl font-extrabold text-amber-300">Mint Your Abstract Feline NFT</h1>
-    <p class="text-lg mt-2 text-gray-300">Soul. Art. Impact. 20% goes to animal shelters 🐾</p>
-    <a class="mt-4 inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-xl text-lg font-bold" href="https://www.tensor.trade/trade/meowlands" target="_blank">Mint on Tensor</a>
+<body>
+  <header>
+    <img src="/assets/logo.png" alt="Meowlands Logo" width="120" height="120" style="border-radius: 50px; margin-bottom: 20px;">
+    <h1>Meowlands - Meowen</h1>
+    <p>1000 unique cat warriors minting on August 28</p>
+    <a href="https://opensea.io/collection/meowlands-meowen" target="_blank" class="mint-btn">Mint on OpenSea</a>
   </header>
 
-  <main class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-    <div class="text-center">
-      <img alt="Meowland #1" class="nft-hover rounded-xl shadow-md w-48 mx-auto mb-2" src="/meowland1.png"/>
-      <p class="mb-2 font-semibold">Meowland #1 – Guardian of Light</p>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-bold" href="https://www.tensor.trade/item/AqUc8HzwPwb2xZpYc3xpS8EXrZLttGeBM68kSjDBmn6h" target="_blank">Buy Now</a>
-    </div>
-    <div class="text-center">
-      <img alt="Meowland #2" class="nft-hover rounded-xl shadow-md w-48 mx-auto mb-2" src="/meowland2_fixed.png"/>
-      <p class="mb-2 font-semibold">Meowland #2 – The Feline Trinity</p>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-bold" href="https://www.tensor.trade/item/CfUvgwjP9xTuQf7zMTy5QyDkQLAM7em7jrZxcyy4Y9aa" target="_blank">Buy Now</a>
-    </div>
-    <div class="text-center">
-      <img alt="Meowland #3" class="nft-hover rounded-xl shadow-md w-48 mx-auto mb-2" src="/meowland3.png"/>
-      <p class="mb-2 font-semibold">Meowland #3 – Crystal Gaze</p>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-bold" href="https://www.tensor.trade/item/EtjeFciqBtcBTRKVUaFi9i9bhhcCFDoUixTLsFQEfdsT" target="_blank">Buy Now</a>
-    </div>
-    <div class="text-center">
-      <img alt="Meowland #4" class="nft-hover rounded-xl shadow-md w-48 mx-auto mb-2" src="/meowland4.png"/>
-      <p class="mb-2 font-semibold">Meowland #4 – The Lava Path</p>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-bold" href="https://www.tensor.trade/item/4iQVqnDYA7tJfaUXK1TzbSi7MsN2jeApBSrUGoVzpBFK" target="_blank">Buy Now</a>
-    </div>
-    <div class="text-center">
-      <img alt="Meowland #5" class="nft-hover rounded-xl shadow-md w-48 mx-auto mb-2" src="/meowland5.png"/>
-      <p class="mb-2 font-semibold">Meowland #5 – Soul Bloom</p>
-      <a class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl font-bold" href="https://www.tensor.trade/item/BDqXed77itvNakxwW3bwmnQGSkL16ZBSpv86v4GxQNj2" target="_blank">Buy Now</a>
-    </div>
-  </main>
+  <section class="info-section">
+    <h2>🐾 About the Collection</h2>
+    <p>
+      Meowlands - Meowen is a hand-crafted NFT collection of 1000 feline warriors. Each NFT funds real cat shelters, blending art, impact and community.
+    </p>
+    <p>
+      Mint price: 0.015 ETH · Limit: 5 per wallet · Reveal after mint
+    </p>
+  </section>
 
-  <section class="bg-gradient-to-br from-purple-800 via-indigo-900 to-gray-900 p-6 my-12 rounded-2xl
+  <footer>
+    &copy; 2025 Meowlands. Powered by cats & Ethereum. Contact: hello@meowlands.org
+  </footer>
+</body>
+</html>
