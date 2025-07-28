@@ -1,35 +1,44 @@
-# 🐾 Meowlands – Abstract NFT Project on Solana
+# 🐾 Meowlands - Meowen Collection
 
-**Meowlands** is a soulful 1/1 NFT project that blends feline spirit, abstract art, and Web3 culture — all built on Solana.
+Welcome to **Meowlands - Meowen**, an NFT collection of 20 unique feline warriors defending the blockchain with claws and honor.
 
-## 🔗 Live Website
+🧬 **Art style:** Hand-crafted, semi-anthropomorphic digital illustrations  
+🎯 **Utility:** Supports real-world cat shelters (20% of all proceeds)  
+🔗 **Mint Date:** August 28, 2025 – 11:00 PM GMT+2  
+📍 **Blockchain:** Ethereum  
+📦 **Smart contract type:** ERC-721 Proxy (Lazy Mint enabled)
 
-👉 [https://meowlands.org](https://meowlands.org)
+## 🔥 Live Minting
 
-## 📂 Pages included
+👉 [Mint here on OpenSea](https://opensea.io/collection/meowlands-meowen/overview)
 
-- [`index.html`](https://meowlands.org) – Main landing page
-- [`/faq.html`](https://meowlands.org/faq.html) – Frequently Asked Questions
-- [`/contact.html`](https://meowlands.org/contact.html) – Team & Contact Info
-- [`/gallery.html`](https://meowlands.org/gallery.html) – Full NFT Gallery
-- [`/terms.html`](https://meowlands.org/terms.html) – Terms & Privacy
-- [`/sitemap.xml`](https://meowlands.org/sitemap.xml) – Sitemap for search engines
-- [`/robots.txt`](https://meowlands.org/robots.txt) – Web crawler permissions
+## 🧩 Structure
 
-## 🎨 About the Project
+- `/Meowland---Meowen/` – Contains all 20 NFT images  
+- `/index.html` – Landing page with mint countdown and showcase  
+- `/assets/` – Includes banners, logos, and pre-reveal artwork  
+- `meowlands_nft_metadata.csv` – Metadata for all NFTs (with token IDs and GitHub image links)
 
-- 5 one-of-one abstract feline NFTs
-- Deployed on Solana, trading on Tensor
-- 20% of all proceeds go to real-world animal shelters
-- Created with purpose, art, and soul
+## 🖼️ Featured Rarities
+
+- 🧠 **Ultra Rare:** 2 NFTs with cosmic backgrounds  
+- 👑 **Rare:** 3 NFTs wearing golden tiaras  
+- 🐾 **Common:** 15 NFTs with unique personalities and props
+
+## 💡 Vision
+
+Meowlands is a long-term art-driven project inspired by feline strength and independence. With each mint, you're not only owning unique digital art—you’re funding rescue shelters, awareness campaigns, and future Meowlands lore.
 
 ## 📬 Contact
 
-- General: [hello@meowlands.org](mailto:hello@meowlands.org)
-- Partnerships: [partners@meowlands.org](mailto:partners@meowlands.org)
-- Press & Media: [media@meowlands.org](mailto:media@meowlands.org)
+- 🐦 [Twitter - @MeowlandsNFT](https://twitter.com/MeowlandsNFT)  
+- 🌐 [Website - Meowlands](https://meowlands.org)  
+- 🎨 Creator: @Titiano (Meowlands Founder & Artist)
 
-Follow us on [Twitter](https://twitter.com/MeowlandsNFT) and [join our Discord](https://discord.gg/jFST42z5) to be part of the Meowverse.
+---
+
+Let's mint. Let's rescue. Let's meow.
+
 
 ---
 
