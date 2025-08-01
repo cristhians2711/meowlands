@@ -15,9 +15,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:10p
   animation:pulse 1.5s infinite;
 }
 @keyframes pulse{0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;}}
-.header-center img.logo{width:120px;display:block;margin:auto;}
+.header-center a img.logo{width:120px;display:block;margin:auto;}
 .header-right{display:flex;gap:10px;}
 .header-right a{padding:10px 20px;font-size:14px;font-weight:bold;text-decoration:none;border-radius:10px;color:white;transition:0.3s;}
+.home-btn{background-color:#555;} .home-btn:hover{background-color:#333;}
 .join-btn{background-color:#7873f5;} .join-btn:hover{background-color:#5a54d1;}
 .opensea-btn{background-color:#ff6ec4;} .opensea-btn:hover{background-color:#e85ab6;}
 .team-btn{background-color:#4caf50;} .team-btn:hover{background-color:#3b8c3e;}
@@ -29,15 +30,17 @@ h2.ultra{color:#ff6ec4;}
 h2.rare{color:#7873f5;}
 h2.common{color:#666;}
 
+/* Stats bonitas */
+.stats-container{display:flex;justify-content:center;gap:30px;margin:40px auto;max-width:900px;}
+.stat-card{background:white;border-radius:15px;padding:20px 30px;box-shadow:0 0 15px rgba(0,0,0,0.1);flex:1;}
+.stat-card h3{margin:0 0 5px;font-size:1.1em;color:#ff6ec4;}
+.stat-card p{margin:0;font-size:1.4em;font-weight:bold;color:#333;}
+
 .gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;padding:40px 10px;}
 .nft-card{display:flex;flex-direction:column;align-items:center;width:180px;}
-.nft-card img{width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
-.nft-card img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
+.nft-card a img{width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
+.nft-card a img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
 .nft-card p{margin-top:8px;font-weight:bold;color:#333;font-size:14px;}
-
-.stats{margin-top:40px;}
-.stats h2{color:#ff6ec4;}
-.stats p{margin:5px 0;font-weight:bold;}
 </style>
 </head>
 <body>
@@ -47,9 +50,12 @@ h2.common{color:#666;}
     <p class="countdown" id="countdown">Meowen Mint starts in ...</p>
   </div>
   <div class="header-center">
-    <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+    <a href="index.html">
+      <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+    </a>
   </div>
   <div class="header-right">
+    <a href="index.html" class="home-btn">Home</a>
     <a href="collection.html" class="opensea-btn">View Full Collection</a>
     <a href="team.html" class="team-btn">Team</a>
     <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
@@ -59,12 +65,11 @@ h2.common{color:#666;}
 
 <h1>Explore the Meowlands Collection</h1>
 
-<!-- Stats -->
-<div class="stats">
-  <h2>Meowlands Stats</h2>
-  <p>Total Supply: <span id="totalSupply">1000</span> NFTs</p>
-  <p>Minted: <span id="minted">0</span></p>
-  <p>Ultra Rare Remaining: <span id="ultraRemaining">4</span></p>
+<!-- Stats bonitas -->
+<div class="stats-container">
+  <div class="stat-card"><h3>Total Supply</h3><p>1000 NFTs</p></div>
+  <div class="stat-card"><h3>Ultra Rares</h3><p>4</p></div>
+  <div class="stat-card"><h3>Blockchain</h3><p>Ethereum</p></div>
 </div>
 
 <p>Discover all 20 NFTs in the Meowen collection. Click any NFT to view it on OpenSea.</p>
@@ -72,36 +77,36 @@ h2.common{color:#666;}
 <!-- ULTRA RARE -->
 <h2 class="rarity-title ultra">🔥 Ultra Rare 🔥</h2>
 <div class="gallery">
-  <div class="nft-card"><img src="Meowen_V1_Cosmic_Crown.png"><p>Cosmic Crown</p></div>
-  <div class="nft-card"><img src="Meowen_V2_Royal_Nebula.png"><p>Royal Nebula</p></div>
-  <div class="nft-card"><img src="Meowen_V3_Frost_Rider.png"><p>Frost Rider</p></div>
-  <div class="nft-card"><img src="Meowen_V4_Rebel_Dawn.png"><p>Rebel Dawn</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V1_Cosmic_Crown.png" loading="lazy"></a><p>Cosmic Crown</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V2_Royal_Nebula.png" loading="lazy"></a><p>Royal Nebula</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V3_Frost_Rider.png" loading="lazy"></a><p>Frost Rider</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V4_Rebel_Dawn.png" loading="lazy"></a><p>Rebel Dawn</p></div>
 </div>
 
 <!-- RARE -->
 <h2 class="rarity-title rare">💎 Rare</h2>
 <div class="gallery">
-  <div class="nft-card"><img src="Meowen_V5_Red_Ronin.png"><p>Red Ronin</p></div>
-  <div class="nft-card"><img src="Meowen_V6_Spirit_Cheer.png"><p>Spirit Cheer</p></div>
-  <div class="nft-card"><img src="Meowen_V7_Sacred_Guard.png"><p>Sacred Guard</p></div>
-  <div class="nft-card"><img src="Meowen_V8_Voltage_Queen.png"><p>Voltage Queen</p></div>
-  <div class="nft-card"><img src="Meowen_V9_Ice_Fang.png"><p>Ice Fang</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V5_Red_Ronin.png" loading="lazy"></a><p>Red Ronin</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V6_Spirit_Cheer.png" loading="lazy"></a><p>Spirit Cheer</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V7_Sacred_Guard.png" loading="lazy"></a><p>Sacred Guard</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V8_Voltage_Queen.png" loading="lazy"></a><p>Voltage Queen</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V9_Ice_Fang.png" loading="lazy"></a><p>Ice Fang</p></div>
 </div>
 
 <!-- COMMON -->
 <h2 class="rarity-title common">Common</h2>
 <div class="gallery">
-  <div class="nft-card"><img src="Meowen_V10_Purple_Toss.png"><p>Purple Toss</p></div>
-  <div class="nft-card"><img src="Meowen_V11_Flame_Cheer.png"><p>Flame Cheer</p></div>
-  <div class="nft-card"><img src="Meowen_V12_Night_Claw.png"><p>Night Claw</p></div>
-  <div class="nft-card"><img src="Meowen_V13_Blade_Pupil.png"><p>Blade Pupil</p></div>
-  <div class="nft-card"><img src="Meowen_V14_Clownrage.png"><p>Clownrage</p></div>
-  <div class="nft-card"><img src="Meowen_V15_Shadowblade.png"><p>Shadowblade</p></div>
-  <div class="nft-card"><img src="Meowen_V16_Goldbat.png"><p>Goldbat</p></div>
-  <div class="nft-card"><img src="Meowen_V17_Double_Trouble.png"><p>Double Trouble</p></div>
-  <div class="nft-card"><img src="Meowen_V18_Katana_Drift.png"><p>Katana Drift</p></div>
-  <div class="nft-card"><img src="Meowen_V19_Paddle_Pro.png"><p>Paddle Pro</p></div>
-  <div class="nft-card"><img src="Meowen_V20_Pom_Princess.png"><p>Pom Princess</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V10_Purple_Toss.png" loading="lazy"></a><p>Purple Toss</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V11_Flame_Cheer.png" loading="lazy"></a><p>Flame Cheer</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V12_Night_Claw.png" loading="lazy"></a><p>Night Claw</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V13_Blade_Pupil.png" loading="lazy"></a><p>Blade Pupil</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V14_Clownrage.png" loading="lazy"></a><p>Clownrage</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V15_Shadowblade.png" loading="lazy"></a><p>Shadowblade</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V16_Goldbat.png" loading="lazy"></a><p>Goldbat</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V17_Double_Trouble.png" loading="lazy"></a><p>Double Trouble</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V18_Katana_Drift.png" loading="lazy"></a><p>Katana Drift</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V19_Paddle_Pro.png" loading="lazy"></a><p>Paddle Pro</p></div>
+  <div class="nft-card"><a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank"><img src="Meowen_V20_Pom_Princess.png" loading="lazy"></a><p>Pom Princess</p></div>
 </div>
 
 <script>
@@ -116,16 +121,6 @@ h2.common{color:#666;}
     const seconds = Math.floor((distance%(1000*60))/1000);
     countdown.textContent = `Meowen Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
   },1000);
-
-  // Stats simulation
-  let minted=0,totalSupply=1000;
-  setInterval(()=>{
-    if(minted<totalSupply){
-      minted+=Math.floor(Math.random()*3);
-      document.getElementById('minted').innerText=minted;
-      document.getElementById('ultraRemaining').innerText=Math.max(0,4-Math.floor(minted/250));
-    }
-  },3000);
 </script>
 
 </body>
