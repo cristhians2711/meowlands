@@ -7,6 +7,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
 <style>
 body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
+header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#f8f7fb;}
+.header-left .countdown{
+  font-size:28px;font-weight:bold;
+  background:linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;}}
+.header-center img.logo{width:120px;display:block;margin:auto;}
+.header-right{display:flex;gap:10px;}
+.header-right a{padding:10px 20px;font-size:14px;font-weight:bold;text-decoration:none;border-radius:10px;color:white;transition:0.3s;}
+.join-btn{background-color:#7873f5;} .join-btn:hover{background-color:#5a54d1;}
+.opensea-btn{background-color:#ff6ec4;} .opensea-btn:hover{background-color:#e85ab6;}
+.team-btn{background-color:#4caf50;} .team-btn:hover{background-color:#3b8c3e;}
+.mint-btn{background-color:#ffb347;} .mint-btn:hover{background-color:#ff9800;}
+
 h1{margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .team-container{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;padding:40px;}
 .member{display:flex;flex-direction:column;align-items:center;width:200px;}
@@ -17,10 +33,25 @@ h1{margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f
 </head>
 <body>
 
+<header>
+  <div class="header-left">
+    <p class="countdown" id="countdown">Meowen Mint starts in ...</p>
+  </div>
+  <div class="header-center">
+    <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+  </div>
+  <div class="header-right">
+    <a href="collection.html" class="opensea-btn">View Full Collection</a>
+    <a href="team.html" class="team-btn">Team</a>
+    <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
+    <a href="#" id="connectWallet" class="mint-btn">Mint / Connect Wallet</a>
+  </div>
+</header>
+
 <h1>Meet the Meowlands Team</h1>
 <div class="team-container">
   <div class="member">
-    <img src="titiano.jpeg" alt="Titiano">
+    <img src="titiano.png" alt="Titiano">
     <h3>Titiano</h3>
     <p>Partnerships & Ops 🤝<br>Ensures smooth collabs & Web3 integrations.</p>
   </div>
@@ -31,11 +62,35 @@ h1{margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f
   </div>
   <div class="member">
     <img src="meowlito.png" alt="Culito">
-    <h3>Meowlito</h3>
+    <h3>Culito</h3>
     <p>Creative Founder 🎨<br>Designer, lore writer & Web3 strategist.</p>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+<script>
+  const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
+  const countdown = document.getElementById("countdown");
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+    countdown.textContent = `Meowen Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  },1000);
+
+  document.getElementById('connectWallet').addEventListener('click',async()=>{
+    if(typeof window.ethereum!=='undefined'){
+      try{
+        const accounts=await ethereum.request({method:'eth_requestAccounts'});
+        const account=accounts[0];
+        connectWallet.innerText=`Wallet: ${account.substring(0,6)}...${account.slice(-4)}`;
+      }catch(e){alert('Connection rejected.')}
+    }else alert('Please install Metamask to connect your wallet.');
+  });
+</script>
+
 </body>
 </html>
-
