@@ -1,33 +1,27 @@
-# 🐾 Meowlands 
+# 🐾 Meowlands - Web3 Cat Kingdom
 
-![Meowlands Banner](banner_nuevo.png)
+![Meowlands Banner](assets/banner_nuevo.png)
 
-Meowlands is a vibrant Web3 cat kingdom, home to a diverse community of adorable and legendary feline characters — from mystical guardians and cosmic warriors to playful rogues and meme-loving companions.
+**Meowlands** is a vibrant Web3 **cat kingdom**, home to a diverse community of adorable and legendary feline characters — from mystical guardians and cosmic warriors to playful rogues and meme-loving companions.  
 
-Our ecosystem goes beyond a single NFT collection: it’s a full universe of cats that combines digital art, community-driven storytelling, memes, and Web3 utilities.
+Our ecosystem goes beyond a single NFT collection: it’s a **full universe of cats** that combines **digital art, community-driven storytelling, memes, and Web3 utilities**.  
 
-By collecting and joining Meowlands, you:
-
-Support animal shelters with 20% of all proceeds
-
-Access exclusive lore, airdrops, and gamified experiences
-
-Join a creative and fun community of cat lovers and NFT degens
-
-Become part of the Meowverse, where every cat has a story and every holder a crown
-
-
+By collecting and joining Meowlands, you:  
+- 🐾 Support **animal shelters** with 20% of all proceeds  
+- 🎁 Access **exclusive lore, airdrops, and gamified experiences**  
+- 😹 Join a **creative and fun community of cat lovers and NFT degens**  
+- 👑 Become part of the **Meowverse**, where every cat has a story and every holder a crown  
 
 ---
 
 ## ✨ Collection Overview
 
-- 🎨 **Art Style:** Hand-crafted, semi-anthropomorphic cat warriors  
+- 🎨 **Art Style:** Hand-crafted, semi-anthropomorphic cat characters  
 - 🐾 **Utility:** Supports real-world animal shelters (20% donations)  
 - ⏰ **Mint Date:** **August 28, 2025 – 11:00 PM GMT+2**  
 - ⛓ **Blockchain:** Ethereum  
 - 📜 **Contract Type:** ERC-721 Proxy (Lazy Mint enabled)  
-- 🌐 **Website:** [meowlands.org](https://meowlands.org) *(actualiza con tu dominio)*  
+- 🌐 **Website:** [meowlands.xyz](https://meowlands.xyz) *(actualiza con tu dominio)*  
 - 💎 **OpenSea Collection:** [View on OpenSea](https://opensea.io/collection/meowlands-meowen/overview)  
 
 ---
@@ -58,7 +52,7 @@ Become part of the Meowverse, where every cat has a story and every holder a cro
 
 ## 🌟 Live Mint & Community
 
-- 🐾 **Mint Page:** [Visit Website](https://meowlands.xyz)  
+- 🐾 **Mint Page:** [Visit Website](https://meowlands.org)  
 - 💎 **OpenSea:** [Explore Collection](https://opensea.io/collection/meowlands-meowen/overview)  
 - 🐦 **Twitter / X:** [@MeowlandsNFT](https://x.com/MeowlandsNFT)  
 - 💬 **Community:** [Join Meowlands](https://x.com/i/communities/1951025201656840511)
@@ -77,7 +71,7 @@ Become part of the Meowverse, where every cat has a story and every holder a cro
 
 ## ❤️ Vision
 
-Meowlands is a long-term Web3 project inspired by feline **strength and independence**.  
+Meowlands is a long-term Web3 project inspired by **feline strength and independence**.  
 By minting, you:  
 - Own a piece of **unique digital art**  
 - Support **real-world rescue shelters**  
