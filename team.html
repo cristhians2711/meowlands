@@ -30,6 +30,47 @@ h1{margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f
 .member img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #ff6ec4;}
 .member h3{margin:10px 0 5px;}
 .member p{margin:0;font-size:14px;color:#555;}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-right a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-left, .header-center, .header-right {
+    margin: 5px 0;
+  }
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .member {
+    width: 100%;
+    max-width: 220px;
+  }
+  .member img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
 </style>
 </head>
 <body>
