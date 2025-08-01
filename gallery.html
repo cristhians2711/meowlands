@@ -1,52 +1,24 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery – Meowlands</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meowlands Collection</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px 10px;}
+.gallery img{width:200px;height:200px;border-radius:20px;object-fit:cover;transition:transform 0.3s;}
+.gallery img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
+</style>
 </head>
-<body class="bg-gray-900 text-white p-6">
-<nav class="bg-gray-950 text-white py-4 px-6 flex justify-between items-center shadow-md rounded-xl mb-6">
-  <div class="text-xl font-bold text-amber-300">Meowlands</div>
-  <div class="space-x-6 text-lg">
-    <a href="/" class="hover:underline text-gray-200">Home</a>
-    <a href="/faq.html" class="hover:underline text-gray-200">FAQ</a>
-    <a href="/contact.html" class="hover:underline text-gray-200">Contact</a>
-    <a href="https://twitter.com/MeowlandsNFT" target="_blank" class="text-blue-400 hover:underline">Twitter</a>
-    <a href="https://discord.gg/jFST42z5" target="_blank" class="text-indigo-400 hover:underline">Discord</a>
-  </div>
-</nav>
-<section class="max-w-6xl mx-auto">
-  <h2 class="text-4xl font-extrabold text-center text-amber-300 mb-8">🎨 Meowlands Gallery</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    <div class="text-center">
-      <img src="/meowland1.png" alt="Meowland #1" class="rounded-xl shadow-md w-48 mx-auto mb-2" />
-      <p class="font-semibold mb-2">Meowland #1 – Guardian of Light</p>
-      <a href="https://www.tensor.trade/item/AqUc8HzwPwb2xZpYc3xpS8EXrZLttGeBM68kSjDBmn6h" class="text-green-400 underline">View on Tensor</a>
-    </div>
-    <div class="text-center">
-      <img src="/meowland2_fixed.png" alt="Meowland #2" class="rounded-xl shadow-md w-48 mx-auto mb-2" />
-      <p class="font-semibold mb-2">Meowland #2 – The Feline Trinity</p>
-      <a href="https://www.tensor.trade/item/CfUvgwjP9xTuQf7zMTy5QyDkQLAM7em7jrZxcyy4Y9aa" class="text-green-400 underline">View on Tensor</a>
-    </div>
-    <div class="text-center">
-      <img src="/meowland3.png" alt="Meowland #3" class="rounded-xl shadow-md w-48 mx-auto mb-2" />
-      <p class="font-semibold mb-2">Meowland #3 – Crystal Gaze</p>
-      <a href="https://www.tensor.trade/item/EtjeFciqBtcBTRKVUaFi9i9bhhcCFDoUixTLsFQEfdsT" class="text-green-400 underline">View on Tensor</a>
-    </div>
-    <div class="text-center">
-      <img src="/meowland4.png" alt="Meowland #4" class="rounded-xl shadow-md w-48 mx-auto mb-2" />
-      <p class="font-semibold mb-2">Meowland #4 – The Lava Path</p>
-      <a href="https://www.tensor.trade/item/4iQVqnDYA7tJfaUXK1TzbSi7MsN2jeApBSrUGoVzpBFK" class="text-green-400 underline">View on Tensor</a>
-    </div>
-    <div class="text-center">
-      <img src="/meowland5.png" alt="Meowland #5" class="rounded-xl shadow-md w-48 mx-auto mb-2" />
-      <p class="font-semibold mb-2">Meowland #5 – Soul Bloom</p>
-      <a href="https://www.tensor.trade/item/BDqXed77itvNakxwW3bwmnQGSkL16ZBSpv86v4GxQNj2" class="text-green-400 underline">View on Tensor</a>
-    </div>
-  </div>
-</section>
+<body>
+<h1>Explore the Meowlands Collection</h1>
+<p>Discover all NFTs in the Meowen collection. Click any NFT to view it on OpenSea.</p>
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V1_Cosmic_Crown.png" alt="NFT" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')">
+<img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V2_Royal_Nebula.png" alt="NFT" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')">
+<img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V3_Frost_Rider.png" alt="NFT" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')">
+<img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V4_Rebel_Dawn.png" alt="NFT" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')">
+<!-- Add full collection here -->
+</div>
 </body>
 </html>
