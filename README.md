@@ -1,4 +1,4 @@
-# 🐾 Meowlands - Meowen NFT Collection
+# 🐾 Meowlands 
 
 ![Meowlands Banner](banner_nuevo.png)
 
