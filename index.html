@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meowlands - The Cat Kingdom of Web3</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
-  <style>
-    body { margin:0; font-family:'Montserrat',sans-serif; background:#f8f7fb; color:#333; text-align:center; }
-    
-    /* HEADER */
-    header { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:#f8f7fb; }
-    .header-left { text-align:left; }
-    .header-left .countdown {
-      font-size: 28px;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff6ec4, #7873f5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse { 0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;} }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meowlands - The Cat Kingdom of Web3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#f8f7fb;}
+.header-left .countdown{
+  font-size:28px;font-weight:bold;
+  background:linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;}}
+.header-center a img.logo{width:120px;display:block;margin:auto;}
+.header-right{display:flex;gap:10px;}
+.header-right a{padding:10px 20px;font-size:14px;font-weight:bold;text-decoration:none;border-radius:10px;color:white;transition:0.3s;}
+.home-btn{background-color:#555;} .home-btn:hover{background-color:#333;}
+.join-btn{background-color:#7873f5;} .join-btn:hover{background-color:#5a54d1;}
+.opensea-btn{background-color:#ff6ec4;} .opensea-btn:hover{background-color:#e85ab6;}
+.team-btn{background-color:#4caf50;} .team-btn:hover{background-color:#3b8c3e;}
+.mint-btn{background-color:#ffb347;} .mint-btn:hover{background-color:#ff9800;}
 
-    .header-center img.logo { width:120px; display:block; margin:auto; }
-    .header-right { display:flex; gap:10px; }
-    .header-right a { padding:10px 20px; font-size:14px; font-weight:bold; text-decoration:none; border-radius:10px; color:white; transition:0.3s; }
-    .join-btn { background-color:#7873f5; } .join-btn:hover{background-color:#5a54d1;}
-    .opensea-btn { background-color:#ff6ec4; } .opensea-btn:hover{background-color:#e85ab6;}
-    .team-btn { background-color:#4caf50; } .team-btn:hover{background-color:#3b8c3e;}
-    .mint-btn { background-color:#ffb347; } .mint-btn:hover{background-color:#ff9800;}
+header img.banner{width:100%;display:block;border-bottom:4px solid #ff6ec4;}
 
-    header img.banner { width:100%; display:block; border-bottom:4px solid #ff6ec4; }
+h1{font-size:2.5em;margin:20px 0 10px;background:linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 
-    h1 { font-size:2.5em; margin:20px 0 10px; background:linear-gradient(90deg,#ff6ec4,#7873f5);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+/* SECTIONS */
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px 10px;}
+.gallery img{width:220px;height:220px;border-radius:20px;object-fit:cover;box-shadow:0 0 20px rgba(255,110,196,0.4);}
+section{margin:50px 20px;}
+.subsection{max-width:900px;margin:auto;padding:20px;}
 
-    /* SECTIONS */
-    .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:40px 10px; }
-    .gallery img { width:220px; height:220px; border-radius:20px; object-fit:cover; box-shadow:0 0 20px rgba(255,110,196,0.4); }
-    section { margin:50px 20px; }
-    .subsection { max-width:900px; margin:auto; padding:20px; }
+/* ULTRA RARE SECTION */
+.ultra-rare{background:linear-gradient(135deg,#ff6ec4 0%,#7873f5 100%);
+  color:white;padding:30px 0;border-radius:15px;max-width:1200px;margin:0 auto;}
+.ultra-rare h2{font-size:2em;margin-bottom:10px;}
+.ultra-rare a{display:inline-block;margin-top:15px;padding:12px 28px;
+  font-size:16px;font-weight:bold;color:white;
+  background:linear-gradient(90deg,#ff6ec4,#7873f5);
+  border-radius:10px;text-decoration:none;transition:0.3s;}
+.ultra-rare a:hover{opacity:0.85;}
 
-    /* ULTRA RARE SECTION */
-    .ultra-rare {
-      background:linear-gradient(135deg,#ff6ec4 0%,#7873f5 100%);
-      color:white; padding:30px 0; border-radius:15px;
-      max-width:1200px; margin:0 auto;
-    }
-    .ultra-rare h2 { font-size:2em; margin-bottom:10px; }
-    .ultra-rare a {
-      display:inline-block; margin-top:15px; padding:12px 28px;
-      font-size:16px; font-weight:bold; color:white;
-      background:linear-gradient(90deg,#ff6ec4,#7873f5);
-      border-radius:10px; text-decoration:none; transition:0.3s;
-    }
-    .ultra-rare a:hover { opacity:0.85; }
+/* STATS BONITAS */
+.stats-container{display:flex;justify-content:center;gap:30px;margin:40px auto;max-width:900px;}
+.stat-card{background:white;border-radius:15px;padding:20px 30px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);flex:1;}
+.stat-card h3{margin:0 0 5px;font-size:1.1em;color:#ff6ec4;}
+.stat-card p{margin:0;font-size:1.4em;font-weight:bold;color:#333;}
 
-    /* STATS */
-    .stats { margin-top:40px; }
-    .stats h2 { color:#ff6ec4; }
-    .stats p { margin:5px 0; font-weight:bold; }
-
-    /* ROADMAP */
-    .roadmap { display:flex; flex-direction:column; gap:10px; text-align:left; max-width:800px; margin:20px auto; }
-
-    /* FOOTER */
-    footer { margin-top:50px; padding:30px 0; background-color:#333; color:#fff; }
-    footer a { color:#ff6ec4; text-decoration:none; margin:0 10px; }
-  </style>
+/* FOOTER */
+footer{margin-top:50px;padding:30px 0;background-color:#333;color:#fff;}
+footer a{color:#ff6ec4;text-decoration:none;margin:0 10px;}
+</style>
 </head>
 <body>
 
@@ -75,9 +65,12 @@
     <p class="countdown" id="countdown">Meowen Mint starts in ...</p>
   </div>
   <div class="header-center">
-    <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+    <a href="index.html">
+      <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+    </a>
   </div>
   <div class="header-right">
+    <a href="index.html" class="home-btn">Home</a>
     <a href="collection.html" class="opensea-btn">View Full Collection</a>
     <a href="team.html" class="team-btn">Team</a>
     <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
@@ -86,6 +79,13 @@
 </header>
 
 <img src="banner_nuevo.png" alt="Meowlands Banner" class="banner">
+
+<!-- Stats bonitas -->
+<div class="stats-container">
+  <div class="stat-card"><h3>Total Supply</h3><p>1000 NFTs</p></div>
+  <div class="stat-card"><h3>Ultra Rares</h3><p>4</p></div>
+  <div class="stat-card"><h3>Blockchain</h3><p>Ethereum</p></div>
+</div>
 
 <h1>Welcome to Meowlands</h1>
 <p class="subsection">
@@ -109,18 +109,10 @@
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <h2>Meowlands Stats</h2>
-  <p>Total Supply: <span id="totalSupply">1000</span> NFTs</p>
-  <p>Minted: <span id="minted">0</span></p>
-  <p>Ultra Rare Remaining: <span id="ultraRemaining">4</span></p>
-</div>
-
 <!-- ROADMAP -->
 <section>
   <h2>Roadmap</h2>
-  <div class="roadmap">
+  <div class="subsection">
     <p><strong>Phase 1:</strong> Launch of Meowen collection on Ethereum (Aug 28, 2025)</p>
     <p><strong>Phase 2:</strong> Airdrops, dynamic reveal, and exclusive holder rewards</p>
     <p><strong>Phase 3:</strong> Lore expansion, merch drops, and second NFT collection</p>
@@ -153,23 +145,12 @@
   setInterval(() => {
     const now = new Date().getTime();
     const distance = targetDate - now;
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
     countdown.textContent = `Meowen Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }, 1000);
-
-  // Stats simulation
-  let minted = 0;
-  const totalSupply = 1000;
-  setInterval(()=>{
-    if(minted < totalSupply){
-      minted += Math.floor(Math.random()*3);
-      document.getElementById('minted').innerText = minted;
-      document.getElementById('ultraRemaining').innerText = Math.max(0,4-Math.floor(minted/250));
-    }
-  },3000);
+  },1000);
 </script>
 
 </body>
