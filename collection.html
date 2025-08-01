@@ -41,6 +41,53 @@ h2.common{color:#666;}
 .nft-card a img{width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
 .nft-card a img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
 .nft-card p{margin-top:8px;font-weight:bold;color:#333;font-size:14px;}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-right a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-left, .header-center, .header-right {
+    margin: 5px 0;
+  }
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+  .nft-card {
+    width: 100%;
+    max-width: 220px;
+  }
+  .nft-card a img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+}
 </style>
 </head>
 <body>
