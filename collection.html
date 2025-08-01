@@ -7,9 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
 <style>
 body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
-/* HEADER */
 header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#f8f7fb;}
-.header-left{text-align:left;}
 .header-left .countdown{
   font-size:28px;font-weight:bold;
   background:linear-gradient(90deg,#ff6ec4,#7873f5);
@@ -25,23 +23,21 @@ header{display:flex;align-items:center;justify-content:space-between;padding:10p
 .team-btn{background-color:#4caf50;} .team-btn:hover{background-color:#3b8c3e;}
 .mint-btn{background-color:#ffb347;} .mint-btn:hover{background-color:#ff9800;}
 
-/* STATS */
-.stats { margin-top:40px; }
-.stats h2 { color:#ff6ec4; }
-.stats p { margin:5px 0; font-weight:bold; }
+h1{margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+h2.rarity-title{margin-top:40px;font-size:1.8em;}
+h2.ultra{color:#ff6ec4;}
+h2.rare{color:#7873f5;}
+h2.common{color:#666;}
 
-/* COLLECTION */
-h1 {margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-h2.rarity-title {margin-top:40px;font-size:1.8em;}
-h2.ultra {color:#ff6ec4;}
-h2.rare {color:#7873f5;}
-h2.common {color:#666;}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;padding:40px 10px;}
+.nft-card{display:flex;flex-direction:column;align-items:center;width:180px;}
+.nft-card img{width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
+.nft-card img:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
+.nft-card p{margin-top:8px;font-weight:bold;color:#333;font-size:14px;}
 
-.gallery {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;padding:40px 10px;}
-.nft-card {display:flex;flex-direction:column;align-items:center;width:180px;}
-.nft-card img {width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
-.nft-card img:hover {transform:scale(1.05);box-shadow:0 0 15px rgba(255,110,196,0.5);}
-.nft-card p {margin-top:8px;font-weight:bold;color:#333;font-size:14px;}
+.stats{margin-top:40px;}
+.stats h2{color:#ff6ec4;}
+.stats p{margin:5px 0;font-weight:bold;}
 </style>
 </head>
 <body>
@@ -57,13 +53,13 @@ h2.common {color:#666;}
     <a href="collection.html" class="opensea-btn">View Full Collection</a>
     <a href="team.html" class="team-btn">Team</a>
     <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
-    <a href="#" id="connectWallet" class="mint-btn">Mint / Connect Wallet</a>
+    <a href="https://opensea.io/collection/meowlands-meowen/overview" class="mint-btn" target="_blank">Mint on OpenSea</a>
   </div>
 </header>
 
 <h1>Explore the Meowlands Collection</h1>
 
-<!-- STATS -->
+<!-- Stats -->
 <div class="stats">
   <h2>Meowlands Stats</h2>
   <p>Total Supply: <span id="totalSupply">1000</span> NFTs</p>
@@ -108,7 +104,6 @@ h2.common {color:#666;}
   <div class="nft-card"><img src="Meowen_V20_Pom_Princess.png"><p>Pom Princess</p></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 <script>
   const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
   const countdown = document.getElementById("countdown");
@@ -131,17 +126,6 @@ h2.common {color:#666;}
       document.getElementById('ultraRemaining').innerText=Math.max(0,4-Math.floor(minted/250));
     }
   },3000);
-
-  // Connect Wallet
-  document.getElementById('connectWallet').addEventListener('click',async()=>{
-    if(typeof window.ethereum!=='undefined'){
-      try{
-        const accounts=await ethereum.request({method:'eth_requestAccounts'});
-        const account=accounts[0];
-        connectWallet.innerText=`Wallet: ${account.substring(0,6)}...${account.slice(-4)}`;
-      }catch(e){alert('Connection rejected.')}
-    }else alert('Please install Metamask to connect your wallet.');
-  });
 </script>
 
 </body>
