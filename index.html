@@ -56,6 +56,51 @@ section{margin:50px 20px;}
 /* FOOTER */
 footer{margin-top:50px;padding:30px 0;background-color:#333;color:#fff;}
 footer a{color:#ff6ec4;text-decoration:none;margin:0 10px;}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-right a {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-left, .header-center, .header-right {
+    margin: 5px 0;
+  }
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+  .gallery img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
 </style>
 </head>
 <body>
