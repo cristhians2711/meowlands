@@ -1,6 +1,6 @@
 # 🐾 Meowlands - Meowen NFT Collection
 
-![Meowlands Banner](assets/banner_nuevo.png)
+![Meowlands Banner](banner_nuevo.png)
 
 **Meowlands** is a Web3 cat kingdom of 20 unique feline warriors, defending the blockchain with claws and honor.  
 Each NFT is part of a long-term project supporting **animal shelters** (20% of proceeds) while building a **community-driven NFT ecosystem** full of lore, memes, and rewards.
@@ -14,7 +14,7 @@ Each NFT is part of a long-term project supporting **animal shelters** (20% of p
 - ⏰ **Mint Date:** **August 28, 2025 – 11:00 PM GMT+2**  
 - ⛓ **Blockchain:** Ethereum  
 - 📜 **Contract Type:** ERC-721 Proxy (Lazy Mint enabled)  
-- 🌐 **Website:** [meowlands.xyz](https://meowlands.xyz) *(actualiza con tu dominio)*  
+- 🌐 **Website:** [meowlands.org](https://meowlands.org) *(actualiza con tu dominio)*  
 - 💎 **OpenSea Collection:** [View on OpenSea](https://opensea.io/collection/meowlands-meowen/overview)  
 
 ---
