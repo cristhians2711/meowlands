@@ -6,178 +6,63 @@
   <title>Meowlands - The Cat Kingdom of Web3</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f8f7fb;
-      color: #333;
-      text-align: center;
-    }
-
+    body { margin:0; font-family:'Montserrat',sans-serif; background:#f8f7fb; color:#333; text-align:center; }
+    
     /* HEADER */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: #f8f7fb;
-    }
-
-    .header-left {
-      text-align: left;
-    }
-
+    header { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:#f8f7fb; }
+    .header-left { text-align:left; }
     .header-left .countdown {
-      font-size: 18px;
-      color: #555;
-      margin: 0;
-    }
-
-    .header-center img.logo {
-      width: 120px;
-      display: block;
-      margin: auto;
-    }
-
-    .header-right {
-      display: flex;
-      gap: 10px;
-    }
-
-    .header-right a {
-      padding: 10px 20px;
-      font-size: 14px;
+      font-size: 28px;
       font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      color: white;
-      transition: 0.3s;
-    }
-
-    .join-btn {
-      background-color: #7873f5;
-    }
-    .join-btn:hover {
-      background-color: #5a54d1;
-    }
-
-    .opensea-btn {
-      background-color: #ff6ec4;
-    }
-    .opensea-btn:hover {
-      background-color: #e85ab6;
-    }
-
-    .team-btn {
-      background-color: #4caf50;
-    }
-    .team-btn:hover {
-      background-color: #3b8c3e;
-    }
-
-    /* BANNER */
-    header img.banner {
-      width: 100%;
-      display: block;
-      border-bottom: 4px solid #ff6ec4;
-    }
-
-    /* TITLES */
-    h1 {
-      font-size: 2.5em;
-      margin: 20px 0 10px;
       background: linear-gradient(90deg, #ff6ec4, #7873f5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: pulse 1.5s infinite;
     }
+    @keyframes pulse { 0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;} }
 
-    /* GALLERY */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 10px;
-    }
+    .header-center img.logo { width:120px; display:block; margin:auto; }
+    .header-right { display:flex; gap:10px; }
+    .header-right a { padding:10px 20px; font-size:14px; font-weight:bold; text-decoration:none; border-radius:10px; color:white; transition:0.3s; }
+    .join-btn { background-color:#7873f5; } .join-btn:hover{background-color:#5a54d1;}
+    .opensea-btn { background-color:#ff6ec4; } .opensea-btn:hover{background-color:#e85ab6;}
+    .team-btn { background-color:#4caf50; } .team-btn:hover{background-color:#3b8c3e;}
 
-    .gallery img {
-      width: 220px;
-      height: 220px;
-      border-radius: 20px;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(255, 110, 196, 0.4);
-    }
+    header img.banner { width:100%; display:block; border-bottom:4px solid #ff6ec4; }
 
-    section {
-      margin: 50px 20px;
-    }
-
-    .subsection {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* ROADMAP */
-    .roadmap {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: left;
-      max-width: 800px;
-      margin: 20px auto;
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: 50px;
-      padding: 30px 0;
-      background-color: #333;
-      color: #fff;
-    }
-
-    footer a {
-      color: #ff6ec4;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+    h1 { font-size:2.5em; margin:20px 0 10px; background:linear-gradient(90deg,#ff6ec4,#7873f5);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
     /* ULTRA RARE SECTION */
+    .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:40px 10px; }
+    .gallery img { width:220px; height:220px; border-radius:20px; object-fit:cover; box-shadow:0 0 20px rgba(255,110,196,0.4); }
+    section { margin:50px 20px; }
+    .subsection { max-width:900px; margin:auto; padding:20px; }
+
     .ultra-rare {
-      background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 100%);
-      color: white;
-      padding: 30px 0;
-      border-radius: 15px;
-      max-width: 1200px;
-      margin: 0 auto;
+      background:linear-gradient(135deg,#ff6ec4 0%,#7873f5 100%);
+      color:white; padding:30px 0; border-radius:15px;
+      max-width:1200px; margin:0 auto;
     }
-
-    .ultra-rare h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
+    .ultra-rare h2 { font-size:2em; margin-bottom:10px; }
     .ultra-rare a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 28px;
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(90deg, #ff6ec4, #7873f5);
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
+      display:inline-block; margin-top:15px; padding:12px 28px;
+      font-size:16px; font-weight:bold; color:white;
+      background:linear-gradient(90deg,#ff6ec4,#7873f5);
+      border-radius:10px; text-decoration:none; transition:0.3s;
     }
+    .ultra-rare a:hover { opacity:0.85; }
 
-    .ultra-rare a:hover {
-      opacity: 0.85;
-    }
+    /* ROADMAP */
+    .roadmap { display:flex; flex-direction:column; gap:10px; text-align:left; max-width:800px; margin:20px auto; }
+
+    /* FOOTER */
+    footer { margin-top:50px; padding:30px 0; background-color:#333; color:#fff; }
+    footer a { color:#ff6ec4; text-decoration:none; margin:0 10px; }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-left">
     <p class="countdown" id="countdown">Meowen Mint starts in ...</p>
@@ -201,14 +86,13 @@
   Here, memes, fun, and Web3 meet to create a purrfect experience for every cat lover and degen alike.
 </p>
 
-<!-- ULTRA RARE SECTION -->
 <section class="ultra-rare">
   <h2>🔥 Ultra Rare NFTs 🔥</h2>
   <div class="gallery">
-    <img src="Meowen_V1_Cosmic_Crown.png" alt="Ultra Rare 1" />
-    <img src="Meowen_V2_Royal_Nebula.png" alt="Ultra Rare 2" />
-    <img src="Meowen_V3_Frost_Rider.png" alt="Ultra Rare 3" />
-    <img src="Meowen_V4_Rebel_Dawn.png" alt="Ultra Rare 4" />
+    <img src="Meowen_V1_Cosmic_Crown.png" alt="Cosmic Crown" />
+    <img src="Meowen_V2_Royal_Nebula.png" alt="Royal Nebula" />
+    <img src="Meowen_V3_Frost_Rider.png" alt="Frost Rider" />
+    <img src="Meowen_V4_Rebel_Dawn.png" alt="Rebel Dawn" />
   </div>
   <div class="subsection">
     <p>These 4 Ultra Rare NFTs are the crown jewels of Meowlands. Holding one unlocks exclusive rewards, secret lore, and lifetime status in our kingdom.</p>
@@ -216,7 +100,6 @@
   </div>
 </section>
 
-<!-- ROADMAP -->
 <section>
   <h2>Roadmap</h2>
   <div class="roadmap">
@@ -227,7 +110,6 @@
   </div>
 </section>
 
-<!-- LITEPAPER -->
 <section>
   <h2>Litepaper</h2>
   <div class="subsection">
@@ -237,7 +119,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>Follow us on 
     <a href="https://x.com/MeowlandsNFT" target="_blank">Twitter</a> | 
