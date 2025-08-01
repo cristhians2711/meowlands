@@ -2,8 +2,21 @@
 
 ![Meowlands Banner](banner_nuevo.png)
 
-**Meowlands** is a Web3 cat kingdom of 20 unique feline warriors, defending the blockchain with claws and honor.  
-Each NFT is part of a long-term project supporting **animal shelters** (20% of proceeds) while building a **community-driven NFT ecosystem** full of lore, memes, and rewards.
+Meowlands is a vibrant Web3 cat kingdom, home to a diverse community of adorable and legendary feline characters — from mystical guardians and cosmic warriors to playful rogues and meme-loving companions.
+
+Our ecosystem goes beyond a single NFT collection: it’s a full universe of cats that combines digital art, community-driven storytelling, memes, and Web3 utilities.
+
+By collecting and joining Meowlands, you:
+
+Support animal shelters with 20% of all proceeds
+
+Access exclusive lore, airdrops, and gamified experiences
+
+Join a creative and fun community of cat lovers and NFT degens
+
+Become part of the Meowverse, where every cat has a story and every holder a crown
+
+
 
 ---
 
