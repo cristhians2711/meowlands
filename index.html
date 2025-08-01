@@ -1,131 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meowlands - Meowen</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
-    <style>
-      body {
-        margin: 0;
-        background-color: #070c16;
-        font-family: 'Montserrat', sans-serif;
-        color: #ffffff;
-        text-align: center;
-      }
-      header img {
-        margin-top: 30px;
-        width: 180px;
-      }
-      h1 {
-        font-size: 2.5em;
-        margin-bottom: 5px;
-        background: linear-gradient(90deg, #ff6ec4, #7873f5);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .mint-button {
-        background-color: #ff6ec4;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 10px;
-        margin: 20px auto;
-        cursor: pointer;
-        transition: 0.3s;
-        display: inline-block;
-      }
-      .mint-button:hover {
-        background-color: #e85ab6;
-      }
-      .countdown {
-        font-size: 20px;
-        margin: 10px 0;
-        color: #bbbbbb;
-      }
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 40px 10px;
-      }
-      .gallery img {
-        width: 220px;
-        height: 220px;
-        border-radius: 20px;
-        object-fit: cover;
-      }
-      section {
-        margin: 40px 20px;
-      }
-      .subsection {
-        max-width: 900px;
-        margin: auto;
-        padding: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <img src="meowlands_logo.gif" alt="Meowlands Logo" />
-      <h1>Meowlands - Meowen</h1>
-      <p class="countdown" id="countdown"></p>
-      <a class="mint-button" href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank">Mint Now</a>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meowlands - The Cat Kingdom of Web3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f7fb;
+      color: #333;
+      text-align: center;
+    }
 
-    <section>
-      <h2>Ultra Rare Preview</h2>
-      <div class="gallery">
-        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V1_Cosmic_Crown.png" alt="Ultra Rare 1" />
-        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V2_Royal_Nebula.png" alt="Ultra Rare 2" />
-        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V3_Frost_Rider.png" alt="Ultra Rare 3" />
-        <img src="https://raw.githubusercontent.com/cristhians2711/meowlands/Meowland---Meowen/Meowen_V4_Rebel_Dawn.png" alt="Ultra Rare 4" />
-      </div>
-    </section>
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #f8f7fb;
+    }
 
-    <section>
-      <h2>Roadmap</h2>
-      <div class="subsection">
-        <p><strong>Phase 1:</strong> Launch of the Meowen Collection on Ethereum (August 28)</p>
-        <p><strong>Phase 2:</strong> Airdrops, dynamic reveal, and exclusive rewards for holders</p>
-        <p><strong>Phase 3:</strong> Expansion into lore, official merch, and second wave of NFTs</p>
-        <p><strong>Phase 4: </strong> Integration with Web3 games and strategic ecosystem partnerships</p>
-      </div>
-    </section>
+    .header-left {
+      text-align: left;
+    }
 
-    <section>
-      <h2>Team</h2>
-      <div class="subsection">
-         <p><strong>Meowtilda the Princess</strong> — Visual designer and creative thinker behind the soul of Meowlands. NFT #1 and heart of the collection.</p>
-        <p><strong>Titiano</strong> —  Creative Founder. Artist, lore architect, and Web3 strategist.</p>
-        <p><strong>Culit0</strong> — Full-stack dev & blockchain wizard. GitHub mastermind and contract deployer.</p>
-        <p><strong>GPT Assistant</strong> — 24/7 operations and technical support powered by AI.</p>
-        <p>Together, we’re building more than a collection—we’re crafting a universe.</p>
-      </div>
-    </section>
+    .header-left .countdown {
+      font-size: 18px;
+      color: #555;
+      margin: 0;
+    }
 
-    <section>
-      <h2>Litepaper</h2>
-      <div class="subsection">
-        <p>Meowlands is an NFT experience that blends adorable aesthetics, real-world impact, and cultural vision. Each mint directly supports real donations to animal shelters. Expect ultra rares, dynamic reveals, utility-driven features, and deep lore wrapped in a bold, unified visual identity. This is not just art—it's a mission.</p>
-      </div>
-    </section>
+    .header-center img.logo {
+      width: 120px;
+      display: block;
+      margin: auto;
+    }
 
-    <script>
-      const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
-      const countdown = document.getElementById("countdown");
-      setInterval(() => {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdown.textContent = `Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
-    </script>
-  </body>
+    .header-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .header-right a {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .join-btn {
+      background-color: #7873f5;
+    }
+    .join-btn:hover {
+      background-color: #5a54d1;
+    }
+
+    .opensea-btn {
+      background-color: #ff6ec4;
+    }
+    .opensea-btn:hover {
+      background-color: #e85ab6;
+    }
+
+    .team-btn {
+      background-color: #4caf50;
+    }
+    .team-btn:hover {
+      background-color: #3b8c3e;
+    }
+
+    /* BANNER */
+    header img.banner {
+      width: 100%;
+      display: block;
+      border-bottom: 4px solid #ff6ec4;
+    }
+
+    /* TITLES */
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 10px;
+    }
+
+    .gallery img {
+      width: 220px;
+      height: 220px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 110, 196, 0.4);
+    }
+
+    section {
+      margin: 50px 20px;
+    }
+
+    .subsection {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* ROADMAP */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      padding: 30px 0;
+      background-color: #333;
+      color: #fff;
+    }
+
+    footer a {
+      color: #ff6ec4;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* ULTRA RARE SECTION */
+    .ultra-rare {
+      background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 100%);
+      color: white;
+      padding: 30px 0;
+      border-radius: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ultra-rare h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .ultra-rare a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .ultra-rare a:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <p class="countdown" id="countdown">Meowen Mint starts in ...</p>
+  </div>
+  <div class="header-center">
+    <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
+  </div>
+  <div class="header-right">
+    <a href="collection.html" class="opensea-btn">View Full Collection</a>
+    <a href="team.html" class="team-btn">Team</a>
+    <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
+  </div>
+</header>
+
+<img src="banner_nuevo.png" alt="Meowlands Banner" class="banner">
+
+<h1>Welcome to Meowlands</h1>
+<p class="subsection">
+  The ultimate cat kingdom in Web3 🐾💜. Meowlands is a vibrant universe where adorable cats rule the blockchain. 
+  Each NFT unlocks unique lore, exclusive community perks, and contributes to real animal shelters. 
+  Here, memes, fun, and Web3 meet to create a purrfect experience for every cat lover and degen alike.
+</p>
+
+<!-- ULTRA RARE SECTION -->
+<section class="ultra-rare">
+  <h2>🔥 Ultra Rare NFTs 🔥</h2>
+  <div class="gallery">
+    <img src="Meowen_V1_Cosmic_Crown.png" alt="Ultra Rare 1" />
+    <img src="Meowen_V2_Royal_Nebula.png" alt="Ultra Rare 2" />
+    <img src="Meowen_V3_Frost_Rider.png" alt="Ultra Rare 3" />
+    <img src="Meowen_V4_Rebel_Dawn.png" alt="Ultra Rare 4" />
+  </div>
+  <div class="subsection">
+    <p>These 4 Ultra Rare NFTs are the crown jewels of Meowlands. Holding one unlocks exclusive rewards, secret lore, and lifetime status in our kingdom.</p>
+    <a href="collection.html">View Full Collection</a>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section>
+  <h2>Roadmap</h2>
+  <div class="roadmap">
+    <p><strong>Phase 1:</strong> Launch of Meowen collection on Ethereum (Aug 28, 2025)</p>
+    <p><strong>Phase 2:</strong> Airdrops, dynamic reveal, and exclusive holder rewards</p>
+    <p><strong>Phase 3:</strong> Lore expansion, merch drops, and second NFT collection</p>
+    <p><strong>Phase 4:</strong> Gaming integration and Web3 strategic partnerships</p>
+  </div>
+</section>
+
+<!-- LITEPAPER -->
+<section>
+  <h2>Litepaper</h2>
+  <div class="subsection">
+    <p>Meowlands is an NFT experience combining adorable aesthetics, real utility, and social impact. 
+    Each NFT supports animal shelters while granting exclusive community access, future drops, and gamified experiences. 
+    Our vision is to build a complete Meowverse where every cat has a story and every holder a role in our kingdom.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Follow us on 
+    <a href="https://x.com/MeowlandsNFT" target="_blank">Twitter</a> | 
+    <a href="https://discord.gg/" target="_blank">Discord</a> | 
+    <a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank">OpenSea</a>
+  </p>
+  <p>© 2025 Meowlands. All rights reserved.</p>
+</footer>
+
+<script>
+  const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
+  const countdown = document.getElementById("countdown");
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdown.textContent = `Meowen Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
+</script>
+
+</body>
 </html>
