@@ -81,7 +81,7 @@
     <a href="collection.html" class="opensea-btn">View Full Collection</a>
     <a href="team.html" class="team-btn">Team</a>
     <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
-    <a href="#" id="connectWallet" class="mint-btn">Mint / Connect Wallet</a>
+    <a href="https://opensea.io/collection/meowlands-meowen/overview" class="mint-btn" target="_blank">Mint on OpenSea</a>
   </div>
 </header>
 
@@ -134,7 +134,7 @@
   <div class="subsection">
     <p>Meowlands is an NFT experience combining adorable aesthetics, real utility, and social impact. 
     Each NFT supports animal shelters while granting exclusive community access, future drops, and gamified experiences. 
-    Our vision is to build a complete Meowverse where every cat has a story and every holder a role in our kingdom.</p>
+    Our vision is to build a complete Meowverse where every cat has a story and every holder a crown.</p>
   </div>
 </section>
 
@@ -147,9 +147,7 @@
   <p>© 2025 Meowlands. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 <script>
-  // Countdown
   const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
   const countdown = document.getElementById("countdown");
   setInterval(() => {
@@ -172,22 +170,6 @@
       document.getElementById('ultraRemaining').innerText = Math.max(0,4-Math.floor(minted/250));
     }
   },3000);
-
-  // Connect Wallet
-  const connectBtn = document.getElementById('connectWallet');
-  connectBtn.addEventListener('click', async () => {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        const account = accounts[0];
-        connectBtn.innerText = "Wallet: " + account.substring(0,6)+"..."+account.slice(-4);
-      } catch (error) {
-        alert("Connection rejected.");
-      }
-    } else {
-      alert("Please install Metamask to connect your wallet.");
-    }
-  });
 </script>
 
 </body>
