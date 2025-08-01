@@ -57,7 +57,7 @@ Each NFT is part of a long-term project supporting **animal shelters** (20% of p
 | Member        | Role                        | Avatar |
 |---------------|-----------------------------|--------|
 | **Culito**    | Creative Founder 🎨          | ![Culito](meowlito.png) |
-| **Titiano**   | Partnerships & Ops 🤝        | ![Titiano](titiano.png) |
+| **Titiano**   | Partnerships & Ops 🤝        | ![Titiano](titiano.jpeg) |
 | **Meowtilda** | Community Builder 🐾         | ![Meowtilda](meowtilda.png) |
 
 ---
