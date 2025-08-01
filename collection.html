@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meowlands Collection</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
 <style>
 body {margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
 h1 {margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873f5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+h2.rarity-title {margin-top:40px;font-size:1.8em;}
+h2.ultra {color:#ff6ec4;}
+h2.rare {color:#7873f5;}
+h2.common {color:#666;}
+
 .gallery {display:flex;flex-wrap:wrap;justify-content:center;gap:30px;padding:40px 10px;}
 .nft-card {display:flex;flex-direction:column;align-items:center;width:180px;}
 .nft-card img {width:180px;height:180px;border-radius:20px;object-fit:cover;transition:transform 0.3s, box-shadow 0.3s;}
@@ -15,19 +21,32 @@ h1 {margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873
 </style>
 </head>
 <body>
+
 <h1>Explore the Meowlands Collection</h1>
 <p>Discover all 20 NFTs in the Meowen collection. Click any NFT to view it on OpenSea.</p>
 
+<!-- ULTRA RARE -->
+<h2 class="rarity-title ultra">🔥 Ultra Rare 🔥</h2>
 <div class="gallery">
   <div class="nft-card"><img src="Meowen_V1_Cosmic_Crown.png" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')"><p>Cosmic Crown</p></div>
   <div class="nft-card"><img src="Meowen_V2_Royal_Nebula.png" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')"><p>Royal Nebula</p></div>
   <div class="nft-card"><img src="Meowen_V3_Frost_Rider.png" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')"><p>Frost Rider</p></div>
   <div class="nft-card"><img src="Meowen_V4_Rebel_Dawn.png" onclick="window.open('https://opensea.io/collection/meowlands-meowen/overview','_blank')"><p>Rebel Dawn</p></div>
+</div>
+
+<!-- RARE -->
+<h2 class="rarity-title rare">💎 Rare</h2>
+<div class="gallery">
   <div class="nft-card"><img src="Meowen_V5_Red_Ronin.png"><p>Red Ronin</p></div>
   <div class="nft-card"><img src="Meowen_V6_Spirit_Cheer.png"><p>Spirit Cheer</p></div>
   <div class="nft-card"><img src="Meowen_V7_Sacred_Guard.png"><p>Sacred Guard</p></div>
   <div class="nft-card"><img src="Meowen_V8_Voltage_Queen.png"><p>Voltage Queen</p></div>
   <div class="nft-card"><img src="Meowen_V9_Ice_Fang.png"><p>Ice Fang</p></div>
+</div>
+
+<!-- COMMON -->
+<h2 class="rarity-title common">Common</h2>
+<div class="gallery">
   <div class="nft-card"><img src="Meowen_V10_Purple_Toss.png"><p>Purple Toss</p></div>
   <div class="nft-card"><img src="Meowen_V11_Flame_Cheer.png"><p>Flame Cheer</p></div>
   <div class="nft-card"><img src="Meowen_V12_Night_Claw.png"><p>Night Claw</p></div>
@@ -40,5 +59,7 @@ h1 {margin:30px 0;font-size:2.2em;background:linear-gradient(90deg,#ff6ec4,#7873
   <div class="nft-card"><img src="Meowen_V19_Paddle_Pro.png"><p>Paddle Pro</p></div>
   <div class="nft-card"><img src="Meowen_V20_Pom_Princess.png"><p>Pom Princess</p></div>
 </div>
+
 </body>
 </html>
+
