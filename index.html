@@ -183,20 +183,5 @@ footer a{color:#ff6ec4;text-decoration:none;margin:0 10px;}
   </p>
   <p>© 2025 Meowlands. All rights reserved.</p>
 </footer>
-
-<script>
-  const targetDate = new Date("2025-08-28T21:00:00Z").getTime();
-  const countdown = document.getElementById("countdown");
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds = Math.floor((distance%(1000*60))/1000);
-    countdown.textContent = `Meowen Mint starts in ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  },1000);
-</script>
-
 </body>
 </html>
