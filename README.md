@@ -1,6 +1,6 @@
 # 🐾 Meowlands - Web3 Cat Kingdom
 
-![Meowlands Banner](assets/banner_nuevo.png)
+![Meowlands Banner](banner_nuevo.png)
 
 **Meowlands** is a vibrant Web3 **cat kingdom**, home to a diverse community of adorable and legendary feline characters — from mystical guardians and cosmic warriors to playful rogues and meme-loving companions.  
 
