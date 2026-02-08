@@ -3,116 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <title>Catrina Consultores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0b0b;
-      color: #ffffff;
+      padding: 0;
     }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0b0b0b;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
     header {
+      position: fixed;
+      top: 0;
+      width: 100%;
       padding: 20px 40px;
+      background-color: rgba(11,11,11,0.95);
+      border-bottom: 1px solid #222;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #222;
+      z-index: 1000;
     }
 
-    header a {
+    .logo img {
+      height: 45px;
+    }
+
+    header nav a {
       color: #fff;
       text-decoration: none;
       margin-left: 20px;
+      font-size: 14px;
+      transition: opacity 0.3s;
     }
 
+    header nav a:hover {
+      opacity: 0.6;
+    }
+
+    header nav a.cta {
+      border: 1px solid #fff;
+      padding: 8px 16px;
+    }
+
+    header nav a.cta:hover {
+      background-color: #fff;
+      color: #0b0b0b;
+    }
+
+    /* HERO */
     .hero {
-      padding: 120px 40px;
+      height: 100vh;
+      padding: 160px 40px 60px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 46px;
       margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 18px;
       color: #ccc;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .btn {
+    .hero .buttons a {
       display: inline-block;
-      margin: 20px 10px;
-      padding: 14px 28px;
+      margin: 0 10px;
+      padding: 14px 30px;
       border: 1px solid #fff;
       color: #fff;
       text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
     }
 
-    .section {
-      padding: 80px 40px;
+    .hero .buttons a:hover {
+      background-color: #fff;
+      color: #0b0b0b;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 40px;
       border-top: 1px solid #222;
     }
 
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 720px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    /* SERVICES */
     .services {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .card {
+    .service-card {
+      flex: 1;
+      min-width: 260px;
       border: 1px solid #222;
       padding: 30px;
-      flex: 1;
+      transition: transform 0.3s, border 0.3s;
     }
 
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #fff;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      background-color: #111;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cta-section a:hover {
+      background-color: #fff;
+      color: #0b0b0b;
+    }
+
+    /* FOOTER */
     footer {
       padding: 40px;
       text-align: center;
       border-top: 1px solid #222;
+      font-size: 14px;
       color: #777;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <strong>CATRINA</strong>
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Área cliente</a>
-    <a href="#">Contacto</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Consultoría y gestoría para empresas</h1>
-  <p>Crecimiento con orden, estrategia y acompañamiento real</p>
-  <a class="btn" href="#">Ver servicios</a>
-  <a class="btn" href="#">Contactar</a>
-</section>
-
-<section class="section">
-  <h2>Qué hacemos</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Gestoría</h3>
-      <p>Fiscal, contable y laboral sin complicaciones.</p>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="catrina_logo.jpeg" alt="Catrina Consultores">
     </div>
-    <div class="card">
-      <h3>Consultoría</h3>
-      <p>Estrategia y organización para crecer con cabeza.</p>
-    </div>
-    <div class="card">
-      <h3>Acompañamiento</h3>
-      <p>No estás solo, caminamos contigo.</p>
-    </div>
-  </div>
-</section>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#area-cliente">Área cliente</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="cta">Hablar con un consultor</a>
+    </nav>
+  </header>
 
-<footer>
-  © Catrina Consultores
-</footer>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <h1>Consultoría y gestoría para empresas</h1>
+    <p>
+      Ayudamos a empresas y emprendedores a crecer con orden,
+      estrategia y acompañamiento real.
+    </p>
+    <div class="buttons">
+      <a href="#servicios">Ver servicios</a>
+      <a href="#contacto">Contactar</a>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section>
+    <h2>Quiénes somos</h2>
+    <p>
+      En Catrina Consultores no solo gestionamos trámites.
+      Acompañamos a nuestros clientes en la toma de decisiones
+      clave para su negocio.
+    </p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+
+    <div class="services">
+      <div class="service-card">
+        <h3>Gestoría</h3>
+        <p>Fiscal, contable y laboral con claridad y control.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Consultoría</h3>
+        <p>Estrategia empresarial y organización interna.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Acompañamiento</h3>
+        <p>Un consultor asignado que conoce tu negocio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section" id="contacto">
+    <h2>¿Hablamos de tu negocio?</h2>
+    <a href="#">Contactar ahora</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © Catrina Consultores · Todos los derechos reservados
+  </footer>
 
 </body>
 </html>
