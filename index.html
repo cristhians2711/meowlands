@@ -1,187 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meowlands - The Cat Kingdom of Web3</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
-<style>
-body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f7fb;color:#333;text-align:center;}
-/* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#f8f7fb;}
-.header-left .countdown{
-  font-size:28px;font-weight:bold;
-  background:linear-gradient(90deg,#ff6ec4,#7873f5);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  animation:pulse 1.5s infinite;
-}
-@keyframes pulse{0%{opacity:1;}50%{opacity:0.6;}100%{opacity:1;}}
-.header-center a img.logo{width:120px;display:block;margin:auto;}
-.header-right{display:flex;gap:10px;}
-.header-right a{padding:10px 20px;font-size:14px;font-weight:bold;text-decoration:none;border-radius:10px;color:white;transition:0.3s;}
-.home-btn{background-color:#555;} .home-btn:hover{background-color:#333;}
-.join-btn{background-color:#7873f5;} .join-btn:hover{background-color:#5a54d1;}
-.opensea-btn{background-color:#ff6ec4;} .opensea-btn:hover{background-color:#e85ab6;}
-.team-btn{background-color:#4caf50;} .team-btn:hover{background-color:#3b8c3e;}
-.mint-btn{background-color:#ffb347;} .mint-btn:hover{background-color:#ff9800;}
+  <meta charset="UTF-8">
+  <title>Catrina Consultores</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0b0b0b;
+      color: #ffffff;
+    }
 
-header img.banner{width:100%;display:block;border-bottom:4px solid #ff6ec4;}
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
 
-h1{font-size:2.5em;margin:20px 0 10px;background:linear-gradient(90deg,#ff6ec4,#7873f5);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
 
-/* SECTIONS */
-.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px 10px;}
-.gallery img{width:220px;height:220px;border-radius:20px;object-fit:cover;box-shadow:0 0 20px rgba(255,110,196,0.4);}
-section{margin:50px 20px;}
-.subsection{max-width:900px;margin:auto;padding:20px;}
+    .hero {
+      padding: 120px 40px;
+      text-align: center;
+    }
 
-/* ULTRA RARE SECTION */
-.ultra-rare{background:linear-gradient(135deg,#ff6ec4 0%,#7873f5 100%);
-  color:white;padding:30px 0;border-radius:15px;max-width:1200px;margin:0 auto;}
-.ultra-rare h2{font-size:2em;margin-bottom:10px;}
-.ultra-rare a{display:inline-block;margin-top:15px;padding:12px 28px;
-  font-size:16px;font-weight:bold;color:white;
-  background:linear-gradient(90deg,#ff6ec4,#7873f5);
-  border-radius:10px;text-decoration:none;transition:0.3s;}
-.ultra-rare a:hover{opacity:0.85;}
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
 
-/* STATS BONITAS */
-.stats-container{display:flex;justify-content:center;gap:30px;margin:40px auto;max-width:900px;}
-.stat-card{background:white;border-radius:15px;padding:20px 30px;
-  box-shadow:0 0 15px rgba(0,0,0,0.1);flex:1;}
-.stat-card h3{margin:0 0 5px;font-size:1.1em;color:#ff6ec4;}
-.stat-card p{margin:0;font-size:1.4em;font-weight:bold;color:#333;}
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+    }
 
-/* FOOTER */
-footer{margin-top:50px;padding:30px 0;background-color:#333;color:#fff;}
-footer a{color:#ff6ec4;text-decoration:none;margin:0 10px;}
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .header-right a {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-}
+    .btn {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 14px 28px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+    }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .header-left, .header-center, .header-right {
-    margin: 5px 0;
-  }
-  .header-right {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .section {
+      padding: 80px 40px;
+      border-top: 1px solid #222;
+    }
 
-  .stats-container {
-    flex-direction: column;
-    gap: 15px;
-    max-width: 300px;
-  }
+    .services {
+      display: flex;
+      gap: 20px;
+    }
 
-  .gallery {
-    gap: 15px;
-  }
-  .gallery img {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-  }
+    .card {
+      border: 1px solid #222;
+      padding: 30px;
+      flex: 1;
+    }
 
-  h1 {
-    font-size: 1.8em;
-  }
-  h2 {
-    font-size: 1.4em;
-  }
-}
-
-</style>
+    footer {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid #222;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="header-left">
-    <p class="countdown" id="countdown">Meowen Mint is LIVE NOW</p>
-  </div>
-  <div class="header-center">
-    <a href="index.html">
-      <img src="meowlands_logo_new.png" alt="Meowlands Logo" class="logo">
-    </a>
-  </div>
-  <div class="header-right">
-    <a href="index.html" class="home-btn">Home</a>
-    <a href="collection.html" class="opensea-btn">View Full Collection</a>
-    <a href="team.html" class="team-btn">Team</a>
-    <a href="https://x.com/i/communities/1951025201656840511" class="join-btn" target="_blank">Join Community</a>
-    <a href="https://opensea.io/collection/meowlands-meowen/overview" class="mint-btn" target="_blank">Mint on OpenSea Now</a>
-  </div>
+  <strong>CATRINA</strong>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Servicios</a>
+    <a href="#">Área cliente</a>
+    <a href="#">Contacto</a>
+  </nav>
 </header>
 
-<img src="banner_nuevo.png" alt="Meowlands Banner" class="banner">
-
-<!-- Stats bonitas -->
-<div class="stats-container">
-  <div class="stat-card"><h3>Total Supply</h3><p>1000 NFTs</p></div>
-  <div class="stat-card"><h3>Ultra Rares</h3><p>4</p></div>
-  <div class="stat-card"><h3>Blockchain</h3><p>Ethereum</p></div>
-</div>
-
-<h1>Welcome to Meowlands</h1>
-<p class="subsection">
-  The ultimate cat kingdom in Web3 🐾💜. Meowlands is a vibrant universe where adorable cats rule the blockchain. 
-  Each NFT unlocks unique lore, exclusive community perks, and contributes to real animal shelters. 
-  Here, memes, fun, and Web3 meet to create a purrfect experience for every cat lover and degen alike.
-</p>
-
-<!-- ULTRA RARE SECTION -->
-<section class="ultra-rare">
-  <h2>🔥 Ultra Rare NFTs 🔥</h2>
-  <div class="gallery">
-    <img src="Meowen_V1_Cosmic_Crown.png" alt="Cosmic Crown" />
-    <img src="Meowen_V2_Royal_Nebula.png" alt="Royal Nebula" />
-    <img src="Meowen_V3_Frost_Rider.png" alt="Frost Rider" />
-    <img src="Meowen_V4_Rebel_Dawn.png" alt="Rebel Dawn" />
-  </div>
-  <div class="subsection">
-    <p>These 4 Ultra Rare NFTs are the crown jewels of Meowlands. Holding one unlocks exclusive rewards, secret lore, and lifetime status in our kingdom.</p>
-    <a href="/collection/">View Full Collection</a>
-  </div>
+<section class="hero">
+  <h1>Consultoría y gestoría para empresas</h1>
+  <p>Crecimiento con orden, estrategia y acompañamiento real</p>
+  <a class="btn" href="#">Ver servicios</a>
+  <a class="btn" href="#">Contactar</a>
 </section>
 
-<!-- ROADMAP -->
-<section>
-  <h2>Roadmap</h2>
-  <div class="subsection">
-    <p><strong>Phase 1:</strong> Launch of Meowen collection on Ethereum (Aug 28, 2025) Already done!</p>
-    <p><strong>Phase 2:</strong> Airdrops, dynamic reveal, and exclusive holder rewards</p>
-    <p><strong>Phase 3:</strong> Lore expansion, merch drops, and second NFT collection</p>
-    <p><strong>Phase 4:</strong> Gaming integration and Web3 strategic partnerships</p>
-  </div>
-</section>
-
-<!-- LITEPAPER -->
-<section>
-  <h2>Litepaper</h2>
-  <div class="subsection">
-    <p>Meowlands is an NFT experience combining adorable aesthetics, real utility, and social impact. 
-    Each NFT supports animal shelters while granting exclusive community access, future drops, and gamified experiences. 
-    Our vision is to build a complete Meowverse where every cat has a story and every holder a crown.</p>
+<section class="section">
+  <h2>Qué hacemos</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Gestoría</h3>
+      <p>Fiscal, contable y laboral sin complicaciones.</p>
+    </div>
+    <div class="card">
+      <h3>Consultoría</h3>
+      <p>Estrategia y organización para crecer con cabeza.</p>
+    </div>
+    <div class="card">
+      <h3>Acompañamiento</h3>
+      <p>No estás solo, caminamos contigo.</p>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>Follow us on 
-    <a href="https://x.com/MeowlandsNFT" target="_blank">Twitter</a> | 
-    <a href="https://discord.gg/" target="_blank">Discord</a> | 
-    <a href="https://opensea.io/collection/meowlands-meowen/overview" target="_blank">OpenSea</a>
-  </p>
-  <p>© 2025 Meowlands. All rights reserved.</p>
+  © Catrina Consultores
 </footer>
+
 </body>
 </html>
+
