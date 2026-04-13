@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRS Consulting — Sistema Corporativo v2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:   #080808;
+  --black-2: #111111;
+  --black-3: #1a1a1a;
+  --black-4: #222222;
+  --gold:       #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark:  #9B7D2E;
+  --silver:       #B8BAC0;
+  --silver-light: #E0E2E8;
+  --silver-dark:  #8A8C92;
+  --white:      #F0EDE8;
+  --text-p:     #F0EDE8;
+  --text-s:     #909090;
+  --text-m:     #555555;
+  --border:     rgba(201,168,76,.20);
+  --border-s:   rgba(255,255,255,.07);
+  --green:  #4CAF7D;
+  --amber:  #E8A83A;
+  --red-c:  #E05555;
+  --font-d: 'Cormorant Garamond', serif;
+  --font-b: 'Montserrat', sans-serif;
+  --font-l: 'Lato', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--text-p);font-family:var(--font-b);font-size:14px;line-height:1.7;display:flex;min-height:100vh}
+
+/* ── SIDEBAR ── */
+#sidebar{width:272px;min-width:272px;background:var(--black-2);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;display:flex;flex-direction:column}
+#sidebar::-webkit-scrollbar{width:3px}
+#sidebar::-webkit-scrollbar-thumb{background:var(--gold-dark)}
+.sb-logo{padding:26px 22px 18px;border-bottom:1px solid var(--border)}
+.sb-brand{font-family:var(--font-d);font-size:26px;font-weight:600;color:var(--gold);letter-spacing:4px;line-height:1}
+.sb-tag{font-family:var(--font-l);font-size:8px;letter-spacing:4px;color:var(--silver);text-transform:uppercase;margin-top:3px}
+.sb-tagline{font-family:var(--font-d);font-size:12px;font-style:italic;color:var(--gold-dark);margin-top:8px;letter-spacing:.5px}
+.sb-sec{padding:16px 22px 4px}
+.sb-sec-t{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;font-weight:700;font-family:var(--font-l)}
+.nav-item{display:block;padding:8px 12px;border-radius:3px;color:var(--text-s);text-decoration:none;font-size:11.5px;font-family:var(--font-l);cursor:pointer;transition:all .18s;border-left:2px solid transparent;margin-bottom:1px}
+.nav-item:hover{color:var(--white);background:rgba(201,168,76,.06)}
+.nav-item.active{color:var(--gold-light);border-left-color:var(--gold);background:rgba(201,168,76,.09);font-weight:700}
+.nav-n{display:inline-flex;width:17px;height:17px;background:rgba(201,168,76,.08);border-radius:50%;align-items:center;justify-content:center;font-size:9px;margin-right:7px;color:var(--gold);border:1px solid var(--border)}
+.sb-footer{margin-top:auto;padding:18px 22px;border-top:1px solid var(--border);font-size:10px;color:var(--text-m);font-family:var(--font-l)}
+
+/* ── MAIN ── */
+#main{margin-left:272px;flex:1;overflow-y:auto}
+#main::-webkit-scrollbar{width:3px}
+#main::-webkit-scrollbar-thumb{background:var(--gold-dark)}
+.page{display:none;padding:56px 68px;max-width:1080px;animation:fadeIn .28s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── TYPE ── */
+.eyebrow{font-family:var(--font-l);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:11px}
+.page-title{font-family:var(--font-d);font-size:50px;font-weight:300;color:var(--white);line-height:1.05;margin-bottom:8px}
+.page-title span{color:var(--gold)}
+.page-sub{font-size:14px;color:var(--text-s);font-weight:300;margin-bottom:52px;max-width:580px}
+.sec-title{font-family:var(--font-d);font-size:27px;font-weight:400;color:var(--white);margin-bottom:5px;margin-top:48px}
+.sec-title:first-of-type{margin-top:0}
+.sec-sub{font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;font-family:var(--font-l)}
+p{color:var(--text-s);font-size:13.5px;line-height:1.8;margin-bottom:15px;font-weight:300}
+
+/* ── DIVIDERS ── */
+.div{border:none;border-top:1px solid var(--border-s);margin:38px 0}
+.div-gold{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:44px 0}
+.hero-line{width:52px;height:1px;background:var(--gold);margin-bottom:30px}
+
+/* ── CARDS ── */
+.card{background:var(--black-3);border:1px solid var(--border-s);border-radius:2px;padding:26px 30px;margin-bottom:14px;position:relative}
+.card-gold{border-color:var(--border);background:rgba(201,168,76,.03)}
+.card-gold::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);border-radius:2px 0 0 2px}
+.card-t{font-family:var(--font-l);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;font-weight:700}
+.card-h{font-family:var(--font-d);font-size:19px;color:var(--white);font-weight:400;margin-bottom:9px}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:11px;margin-bottom:14px}
+
+/* ── SWATCHES ── */
+.swatch{border-radius:2px;overflow:hidden;border:1px solid var(--border-s)}
+.swatch-c{height:76px}
+.swatch-i{background:var(--black-3);padding:11px 13px}
+.swatch-n{font-size:11px;font-weight:700;color:var(--white);font-family:var(--font-l);margin-bottom:3px}
+.swatch-v{font-size:10px;color:var(--text-m);font-family:'Courier New',monospace}
+
+/* ── TAGS ── */
+.tag{display:inline-block;padding:3px 11px;border-radius:1px;font-size:9px;font-family:var(--font-l);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:2px}
+.tg{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.28)}
+.ts{background:rgba(184,186,192,.08);color:var(--silver);border:1px solid rgba(184,186,192,.22)}
+.td{background:var(--black-4);color:var(--text-s);border:1px solid var(--border-s)}
+.t-green{background:rgba(76,175,125,.1);color:var(--green);border:1px solid rgba(76,175,125,.25)}
+.t-amber{background:rgba(232,168,58,.1);color:var(--amber);border:1px solid rgba(232,168,58,.25)}
+
+/* ── TABLE ── */
+table{width:100%;border-collapse:collapse;margin-bottom:22px;font-size:13px}
+th{text-align:left;padding:11px 15px;font-family:var(--font-l);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);font-weight:700;background:rgba(201,168,76,.03)}
+td{padding:12px 15px;color:var(--text-s);border-bottom:1px solid var(--border-s);vertical-align:top;font-weight:300}
+tr:hover td{background:rgba(255,255,255,.015)}
+
+/* ── STEP LIST ── */
+.steps{list-style:none;padding:0}
+.step{display:flex;gap:18px;margin-bottom:18px;align-items:flex-start}
+.step-n{min-width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);font-family:var(--font-l);flex-shrink:0}
+.step-c{flex:1}
+.step-c strong{display:block;color:var(--white);font-size:13px;font-weight:500;margin-bottom:3px}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;width:1px;height:calc(100% - 16px);background:var(--border)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid var(--black-3);box-shadow:0 0 0 1px var(--gold-dark)}
+.tl-t{font-family:var(--font-l);font-size:11px;font-weight:700;color:var(--white);margin-bottom:3px}
+.tl-d{font-size:12px;color:var(--text-s);font-weight:300;margin:0}
+
+/* ── CHECKLIST ── */
+.cklist{list-style:none;padding:0}
+.cki{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--border-s);font-size:13px;color:var(--text-s);font-weight:300}
+.cki::before{content:'◆';color:var(--gold-dark);font-size:7px;margin-top:5px;flex-shrink:0}
+
+/* ── QUOTE ── */
+.qblock{border-left:3px solid var(--gold);padding:14px 22px;margin:22px 0;background:rgba(201,168,76,.03)}
+.qblock p{font-family:var(--font-d);font-size:18px;font-style:italic;color:var(--silver-light);margin:0;font-weight:300}
+
+/* ── SERVICE BLOCK ── */
+.svc-block{border:1px solid var(--border);margin-bottom:38px;background:var(--black-3)}
+.svc-head{background:rgba(201,168,76,.06);padding:22px 30px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.svc-name{font-family:var(--font-d);font-size:24px;color:var(--white);font-weight:500;margin-bottom:2px}
+.svc-code{font-size:11px;color:var(--text-m);font-family:var(--font-l)}
+.svc-body{padding:30px}
+.svc-sec-label{font-family:var(--font-l);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700;display:flex;align-items:center;gap:10px}
+.svc-sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.info-box{background:var(--black-4);padding:14px 18px;border-radius:2px;border-left:2px solid var(--gold-dark)}
+.info-box p{margin:0;font-size:12.5px}
+.info-box .ib-label{font-size:10px;color:var(--gold);font-family:var(--font-l);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;font-weight:700}
+
+/* ── PRICE BADGE ── */
+.price-badge{background:rgba(201,168,76,.1);border:1px solid var(--border);padding:10px 16px;text-align:right;min-width:160px}
+.pb-label{font-size:9px;color:var(--gold-dark);font-family:var(--font-l);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;font-weight:700}
+.pb-range{font-family:var(--font-d);font-size:20px;color:var(--gold-light);font-weight:400;line-height:1}
+.pb-model{font-size:10px;color:var(--text-m);margin-top:3px;font-family:var(--font-l)}
+
+/* ── ROLE CARD ── */
+.role-card{background:var(--black-4);border:1px solid var(--border-s);padding:22px 26px;margin-bottom:11px;display:flex;gap:18px;align-items:flex-start}
+.role-icon{width:42px;height:42px;background:rgba(201,168,76,.08);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-s);margin-bottom:22px}
+.kpi-cell{background:var(--black-3);padding:22px}
+.kpi-v{font-family:var(--font-d);font-size:34px;color:var(--gold);font-weight:300;line-height:1;margin-bottom:5px}
+.kpi-l{font-size:10px;color:var(--text-m);text-transform:uppercase;letter-spacing:2px;font-family:var(--font-l)}
+
+/* ── OBJECTION ── */
+.obj-header{background:var(--black-4);font-family:var(--font-l);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:9px 18px;margin-bottom:1px;font-weight:700;display:grid;grid-template-columns:1fr 1fr;gap:1px}
+.obj-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:1px}
+.obj-q{padding:14px 18px;font-size:12.5px;color:var(--text-s);background:var(--black-3);border-left:2px solid var(--silver-dark);font-weight:300}
+.obj-a{padding:14px 18px;font-size:12.5px;color:var(--text-s);background:rgba(201,168,76,.03);border-left:2px solid var(--gold-dark);font-weight:300}
+
+/* ── LOGO BOX ── */
+.logo-box{border:1px solid var(--border-s);background:var(--black-3);padding:30px;text-align:center;margin-bottom:7px}
+
+/* ── INCORRECT ── */
+.wrong{border:1px solid rgba(180,60,60,.28);background:rgba(180,60,60,.04);padding:18px 22px;position:relative}
+.wrong::before{content:'✕';position:absolute;top:11px;right:14px;color:rgba(180,100,100,.5);font-size:13px}
+.wrong-l{font-size:11px;color:rgba(180,100,100,.65);margin-bottom:5px;font-family:var(--font-l)}
+
+/* ── EMAIL SIG ── */
+.email-sig{border:1px solid var(--border);background:var(--black);padding:22px 26px;max-width:480px;font-family:Arial,sans-serif}
+
+/* ── COVER ── */
+#cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:72px 68px;background:var(--black-2);position:relative;overflow:hidden}
+#cover::before{content:'CRS';position:absolute;right:-80px;top:50%;transform:translateY(-50%);font-family:var(--font-d);font-size:380px;font-weight:600;color:rgba(201,168,76,.025);line-height:1;pointer-events:none}
+.cover-eyebrow{font-family:var(--font-l);font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.cover-title{font-family:var(--font-d);font-size:68px;font-weight:300;line-height:1;color:var(--white);margin-bottom:6px}
+.cover-title strong{font-weight:600;color:var(--gold)}
+.cover-tagline{font-family:var(--font-d);font-size:22px;font-style:italic;color:var(--silver);margin-bottom:8px;font-weight:300}
+.cover-sub{font-size:14px;color:var(--text-s);font-weight:300;margin-bottom:44px;max-width:480px}
+.cover-meta{display:flex;gap:36px;margin-bottom:56px}
+.cm-item label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);display:block;margin-bottom:3px;font-family:var(--font-l)}
+.cm-item span{font-size:12.5px;color:var(--silver)}
+.cover-idx{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-width:680px}
+.idx-item{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--border-s);cursor:pointer;transition:all .18s}
+.idx-item:hover .idx-n{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.idx-n{width:27px;height:27px;border:1px solid var(--gold-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--gold);font-family:var(--font-l);transition:all .18s}
+.idx-t{font-size:12px;color:var(--text-s);font-family:var(--font-l)}
+
+/* ── MARKET PILLS ── */
+.market-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.mkt-pill{display:flex;align-items:center;gap:8px;padding:7px 14px;background:var(--black-4);border:1px solid var(--border-s);font-size:12px;color:var(--text-s);font-family:var(--font-l)}
+.mkt-pill .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-primary{background:var(--gold)}
+.dot-expansion{background:var(--silver-dark)}
+
+/* ── SCRIPT BLOCK ── */
+.script-block{background:var(--black-4);border:1px solid var(--border);padding:22px 26px;margin-bottom:11px}
+.script-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);font-weight:700;margin-bottom:9px}
+.script-text{font-family:var(--font-d);font-size:17px;color:var(--silver-light);font-style:italic;font-weight:300;line-height:1.6;margin:0}
+
+@media print{
+  #sidebar{display:none}
+  #main{margin-left:0}
+  .page{display:block!important;page-break-before:always}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<nav id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand">CRS</div>
+    <div class="sb-tag">— Consulting —</div>
+    <div class="sb-tagline">Tu empresa funciona. Tú diriges.</div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sb-sec-t">Sistema Corporativo</div>
+    <a class="nav-item active" onclick="go('cover')"><span class="nav-n">◆</span>Portada e Índice</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-sec-t">01 · Identidad</div>
+    <a class="nav-item" onclick="go('brand')"><span class="nav-n">1</span>Manual de Marca</a>
+    <a class="nav-item" onclick="go('logos')"><span class="nav-n">2</span>Versiones del Logo</a>
+    <a class="nav-item" onclick="go('applic')"><span class="nav-n">3</span>Guía de Aplicación</a>
+    <a class="nav-item" onclick="go('templates')"><span class="nav-n">4</span>Plantillas Corporativas</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-sec-t">02 · Servicios</div>
+    <a class="nav-item" onclick="go('services')"><span class="nav-n">5</span>Los 6 Servicios</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-sec-t">03 · Sistema</div>
+    <a class="nav-item" onclick="go('ops')"><span class="nav-n">6</span>Operaciones Internas</a>
+    <a class="nav-item" onclick="go('sales')"><span class="nav-n">7</span>Sistema Comercial</a>
+  </div>
+  <div class="sb-footer">
+    <div style="color:var(--gold);font-weight:700;margin-bottom:3px;">CRS Consulting</div>
+    <div>Sistema v2.0 · 2025</div>
+    <div style="color:var(--text-m);margin-top:4px;">España · Europa · Arabia Saudita</div>
+    <div style="margin-top:6px;color:var(--text-m);">Confidencial — Uso Interno</div>
+  </div>
+</nav>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main id="main">
+
+<!-- ══════════ PORTADA ══════════ -->
+<div id="cover" class="page active">
+  <div class="cover-eyebrow">Sistema Corporativo Completo · Documento Maestro v2.0</div>
+  <div class="cover-title">CRS<br><strong>Consulting</strong></div>
+  <div class="cover-tagline">«Tu empresa funciona. Tú diriges.»</div>
+  <div class="cover-sub">Marca · Servicios · Operaciones · Sistema Comercial<br>Arquitectura completa de empresa premium lista para operar.</div>
+
+  <div class="hero-line"></div>
+
+  <div class="cover-meta">
+    <div class="cm-item"><label>Director General</label><span>Cristhiam — Estratega &amp; Decisor</span></div>
+    <div class="cm-item"><label>Versión</label><span>2.0 — 2025</span></div>
+    <div class="cm-item"><label>Mercado</label><span>España · Europa · Arabia Saudita</span></div>
+    <div class="cm-item"><label>Estado</label><span>Día 0 — Operativa</span></div>
+  </div>
+
+  <div class="cover-idx">
+    <div class="idx-item" onclick="go('brand')"><div class="idx-n">1</div><div class="idx-t">Manual de Marca Completo</div></div>
+    <div class="idx-item" onclick="go('logos')"><div class="idx-n">2</div><div class="idx-t">Versiones del Logo</div></div>
+    <div class="idx-item" onclick="go('applic')"><div class="idx-n">3</div><div class="idx-t">Guía de Aplicación de Marca</div></div>
+    <div class="idx-item" onclick="go('templates')"><div class="idx-n">4</div><div class="idx-t">Plantillas Corporativas</div></div>
+    <div class="idx-item" onclick="go('services')"><div class="idx-n">5</div><div class="idx-t">Los 6 Servicios con Precios</div></div>
+    <div class="idx-item" onclick="go('ops')"><div class="idx-n">6</div><div class="idx-t">Operaciones Internas</div></div>
+    <div class="idx-item" onclick="go('sales')"><div class="idx-n">7</div><div class="idx-t">Sistema Comercial</div></div>
+  </div>
+</div>
+
+
+<!-- ══════════ 1. MANUAL DE MARCA ══════════ -->
+<div id="brand" class="page">
+  <div class="eyebrow">Documento 01 · Identidad de Marca</div>
+  <div class="page-title">Manual de <span>Marca</span></div>
+  <div class="page-sub">Identidad, posicionamiento, valores, tono y sistema visual de CRS Consulting.</div>
+
+  <div class="sec-title">Identidad de Marca</div>
+  <div class="sec-sub">Quiénes somos</div>
+
+  <div class="card card-gold">
+    <div class="card-t">Propósito Central</div>
+    <div class="card-h">Transformar el funcionamiento interno de las empresas en sistemas claros, vendibles y escalables.</div>
+    <p>CRS Consulting no vende consultoría genérica. Construye el sistema operativo de la empresa cliente: desde cómo vende, hasta cómo ejecuta, delega y escala. Cada intervención deja una estructura que funciona sin depender de personas concretas.</p>
+  </div>
+
+  <div class="g3">
+    <div class="card"><div class="card-t">Misión</div><p style="margin:0;font-size:13px;">Dotar a PYMEs y empresas de alto nivel de sistemas internos que generan orden, eficiencia y crecimiento real — sin caos ni dependencia del fundador.</p></div>
+    <div class="card"><div class="card-t">Visión</div><p style="margin:0;font-size:13px;">Ser la consultora de referencia en estructuración empresarial y comercial en España, Europa y Arabia Saudita.</p></div>
+    <div class="card"><div class="card-t">Propuesta Única de Valor</div><p style="margin:0;font-size:13px;">Construimos el sistema real que el cliente no supo crear solo. No damos recomendaciones — entregamos estructuras operativas listas para funcionar el día siguiente.</p></div>
+  </div>
+
+  <div class="div-gold"></div>
+
+  <div class="sec-title">Mercado Objetivo</div>
+  <div class="sec-sub">Geografía de operaciones</div>
+
+  <div class="market-row">
+    <div class="mkt-pill"><div class="dot dot-primary"></div><strong style="color:var(--white);">España</strong> — Mercado principal · PYME española · arranque inmediato</div>
+    <div class="mkt-pill"><div class="dot dot-expansion"></div>Europa — Expansión fase 2 · mercados hispanohablantes y anglosajones</div>
+    <div class="mkt-pill"><div class="dot dot-expansion"></div>Arabia Saudita — Expansión fase 3 · hotelería premium · Vision 2030</div>
+  </div>
+
+  <div class="card" style="margin-top:14px;">
+    <div class="card-t">Cliente Ideal (ICP) — España</div>
+    <p style="margin-bottom:8px;">PYME española de <strong style="color:var(--gold);">5 a 100 empleados</strong> con facturación entre €200K y €5M. El negocio <strong style="color:var(--gold);">depende del fundador</strong> para subsistir: sin él no se toman decisiones, no se ejecutan procesos, no se cierra una venta. El propietario quiere que su empresa trabaje para él, no al revés.</p>
+    <div class="g3" style="margin:0;">
+      <div class="info-box"><div class="ib-label">Dolor principal</div><p>«Si yo me voy una semana, todo se para.»</p></div>
+      <div class="info-box"><div class="ib-label">Objetivo</div><p>Crecer sin tener que estar en todo. Poder delegar con confianza.</p></div>
+      <div class="info-box"><div class="ib-label">Miedo oculto</div><p>Que la empresa no valga nada sin su presencia personal.</p></div>
+    </div>
+  </div>
+
+  <div class="div-gold"></div>
+
+  <div class="sec-title">Posicionamiento</div>
+  <div class="sec-sub">Cómo nos percibe el mercado</div>
+
+  <table>
+    <thead><tr><th>Atributo</th><th>CRS Consulting es</th><th>CRS Consulting no es</th></tr></thead>
+    <tbody>
+      <tr><td>Posición</td><td>Socio estratégico de ejecución</td><td>Consultor que da consejos</td></tr>
+      <tr><td>Mercado</td><td>PYMEs 5–100 empleados, hoteles premium, directivos</td><td>Startups sin estructura ni presupuesto</td></tr>
+      <tr><td>Producto</td><td>Sistemas, procesos, estructuras operativas</td><td>Formación teórica o talleres</td></tr>
+      <tr><td>Precio</td><td>Premium · pago por valor entregado</td><td>Tarifa por horas o precio mínimo</td></tr>
+      <tr><td>Diferencial</td><td>Entregamos el sistema completo, no el diagnóstico</td><td>Informes que se archivan</td></tr>
+      <tr><td>Presencia</td><td>Marca empresa · equipo con experiencia sólida</td><td>Persona individual o freelance</td></tr>
+    </tbody>
+  </table>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Valores Corporativos</div>
+  <div class="sec-sub">Los principios que rigen cada decisión</div>
+  <div class="g3">
+    <div class="card"><div class="card-t">01 · Ejecución sobre teoría</div><p style="margin:0;font-size:13px;">Cada servicio termina con algo real: un proceso documentado, un sistema activo, una estructura funcionando.</p></div>
+    <div class="card"><div class="card-t">02 · Claridad absoluta</div><p style="margin:0;font-size:13px;">Nuestros sistemas son comprensibles para cualquier miembro del equipo cliente. Si no se puede enseñar, no está bien construido.</p></div>
+    <div class="card"><div class="card-t">03 · Rigor de alto nivel</div><p style="margin:0;font-size:13px;">Cada entregable refleja precisión técnica y criterio profesional. Trabajamos con los estándares de la consultoría senior.</p></div>
+    <div class="card"><div class="card-t">04 · Confidencialidad</div><p style="margin:0;font-size:13px;">Los procesos, estructuras y datos del cliente son estrictamente confidenciales. Sin excepciones ni matices.</p></div>
+    <div class="card"><div class="card-t">05 · Resultados medibles</div><p style="margin:0;font-size:13px;">Cada proyecto define KPIs de éxito antes de empezar. El resultado se evalúa contra métricas concretas.</p></div>
+    <div class="card"><div class="card-t">06 · Escalabilidad por diseño</div><p style="margin:0;font-size:13px;">Todo lo que construimos está pensado para replicarse, delegarse y crecer sin perder calidad.</p></div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Tono de Comunicación</div>
+  <div class="sec-sub">Cómo habla CRS Consulting</div>
+
+  <div class="card card-gold">
+    <div class="card-t">Voz de Marca</div>
+    <p>CRS Consulting habla como un profesional senior que sabe exactamente lo que hace. <strong style="color:var(--gold);">Directo, seguro, sin relleno.</strong> Nunca condescendiente. Nunca informal en exceso. La marca comunica desde la empresa — no desde una persona individual.</p>
+  </div>
+  <div class="g2">
+    <div>
+      <div class="card-t" style="margin-bottom:10px;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-family:var(--font-l);">CRS SÍ dice</div>
+      <ul class="cklist">
+        <li class="cki">«Construimos el sistema que tu empresa necesita para escalar.»</li>
+        <li class="cki">«Este proceso elimina la dependencia del fundador en 3 fases.»</li>
+        <li class="cki">«Los resultados son medibles desde la semana dos.»</li>
+        <li class="cki">«Tu equipo podrá ejecutar esto sin necesitarte.»</li>
+        <li class="cki">«Diagnóstico en 48 horas, propuesta en 72.»</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card-t" style="margin-bottom:10px;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-family:var(--font-l);color:rgba(180,100,100,.7);">CRS NO dice</div>
+      <ul class="cklist" style="opacity:.55">
+        <li class="cki">«Podríamos intentar ver cómo mejorar un poco…»</li>
+        <li class="cki">«Hacemos todo tipo de consultoría para cualquier empresa»</li>
+        <li class="cki">«Somos muy creativos e innovadores»</li>
+        <li class="cki">«Creemos que quizás sería interesante explorar…»</li>
+        <li class="cki">«¡Vamos a hacer crecer tu negocio! 🚀»</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Sistema de Color</div>
+  <div class="sec-sub">Paleta oficial CRS Consulting</div>
+  <div class="g4">
+    <div class="swatch"><div class="swatch-c" style="background:#C9A84C"></div><div class="swatch-i"><div class="swatch-n">Oro Principal</div><div class="swatch-v">#C9A84C · RGB 201,168,76</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#E2C97E"></div><div class="swatch-i"><div class="swatch-n">Oro Claro</div><div class="swatch-v">#E2C97E · RGB 226,201,126</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#9B7D2E"></div><div class="swatch-i"><div class="swatch-n">Oro Oscuro</div><div class="swatch-v">#9B7D2E · RGB 155,125,46</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#B8BAC0"></div><div class="swatch-i"><div class="swatch-n">Plata</div><div class="swatch-v">#B8BAC0 · RGB 184,186,192</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#E0E2E8"></div><div class="swatch-i"><div class="swatch-n">Plata Clara</div><div class="swatch-v">#E0E2E8 · RGB 224,226,232</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#080808;border:1px solid #222"></div><div class="swatch-i"><div class="swatch-n">Negro Principal</div><div class="swatch-v">#080808 · RGB 8,8,8</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#1A1A1A;border:1px solid #222"></div><div class="swatch-i"><div class="swatch-n">Negro Secundario</div><div class="swatch-v">#1A1A1A · RGB 26,26,26</div></div></div>
+    <div class="swatch"><div class="swatch-c" style="background:#F0EDE8"></div><div class="swatch-i"><div class="swatch-n">Blanco Cálido</div><div class="swatch-v">#F0EDE8 · RGB 240,237,232</div></div></div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Sistema Tipográfico</div>
+  <div class="sec-sub">Jerarquía de fuentes corporativas</div>
+  <div class="card card-gold">
+    <div class="card-t">Display — Cormorant Garamond</div>
+    <div style="font-family:var(--font-d);font-size:40px;font-weight:300;color:var(--gold);margin-bottom:6px;">CRS Consulting</div>
+    <div style="font-family:var(--font-d);font-size:20px;font-style:italic;color:var(--white);">«Tu empresa funciona. Tú diriges.»</div>
+    <p style="margin-top:10px;margin-bottom:0;font-size:12px;">Titulares principales, portadas, secciones hero. Transmite autoridad y posicionamiento premium.</p>
+  </div>
+  <div class="card">
+    <div class="card-t">Corporativa — Montserrat</div>
+    <div style="font-family:var(--font-b);font-size:16px;font-weight:500;color:var(--white);margin-bottom:4px;">Subtítulos y textos de sección</div>
+    <div style="font-family:var(--font-b);font-size:13px;font-weight:300;color:var(--text-s);">Cuerpo de texto para documentos, propuestas y presentaciones corporativas.</div>
+  </div>
+  <div class="card">
+    <div class="card-t">Datos — Lato</div>
+    <div style="font-family:var(--font-l);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:5px;">ETIQUETAS · CATEGORÍAS · METADATA</div>
+    <div style="font-family:var(--font-l);font-size:13px;color:var(--text-s);">Tablas, formularios, etiquetas de sistema, firma de email.</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Elemento</th><th>Fuente</th><th>Tamaño</th><th>Peso</th></tr></thead>
+    <tbody>
+      <tr><td>Titular H1</td><td>Cormorant Garamond</td><td>50–70px</td><td>Light 300</td></tr>
+      <tr><td>Titular H2</td><td>Cormorant Garamond</td><td>27–36px</td><td>Regular 400</td></tr>
+      <tr><td>Subtítulo sección</td><td>Montserrat</td><td>15–17px</td><td>Medium 500</td></tr>
+      <tr><td>Cuerpo de texto</td><td>Montserrat</td><td>13–14px</td><td>Light 300</td></tr>
+      <tr><td>Etiquetas</td><td>Lato</td><td>9–10px</td><td>Bold 700</td></tr>
+      <tr><td>Tablas y datos</td><td>Lato</td><td>12–13px</td><td>Regular 400</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══════════ 2. LOGO ══════════ -->
+<div id="logos" class="page">
+  <div class="eyebrow">Documento 02 · Identidad Visual</div>
+  <div class="page-title">Versiones del <span>Logo</span></div>
+  <div class="page-sub">Especificaciones de uso de cada versión del logo de CRS Consulting.</div>
+
+  <div class="sec-title">Versiones Oficiales</div>
+  <div class="sec-sub">Arquitectura del sistema de logo</div>
+
+  <div class="g2">
+    <div>
+      <div class="card card-gold" style="margin-bottom:8px;">
+        <div class="card-t">01 · Logo Principal (Vertical)</div>
+        <div class="card-h">Isotipo + CRS + Consulting</div>
+        <p style="font-size:12.5px;margin-bottom:10px;">El logo completo con el escudo, las letras CRS y la palabra CONSULTING en formato vertical. Versión canónica de la marca.</p>
+        <span class="tag tg">Uso Primario</span>
+      </div>
+      <div class="logo-box" style="background:#050505;">
+        <div style="font-family:var(--font-d);font-size:36px;font-weight:600;letter-spacing:5px;color:var(--gold);line-height:1;margin-bottom:6px;">CRS</div>
+        <div style="font-family:var(--font-l);font-size:9px;letter-spacing:5px;color:var(--silver);text-transform:uppercase;">— CONSULTING —</div>
+        <div style="font-size:10px;color:var(--text-m);margin-top:14px;font-family:var(--font-l);">Versión principal — fondo negro</div>
+      </div>
+    </div>
+    <div>
+      <div class="card card-gold" style="margin-bottom:8px;">
+        <div class="card-t">02 · Logo Horizontal</div>
+        <div class="card-h">Isotipo + CRS Consulting en línea</div>
+        <p style="font-size:12.5px;margin-bottom:10px;">Para cabeceras de documentos, firma de email, banners corporativos y papelería.</p>
+        <span class="tag ts">Uso Secundario</span>
+      </div>
+      <div class="logo-box" style="background:#050505;display:flex;align-items:center;gap:18px;justify-content:center;">
+        <div style="width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:15px;font-weight:600;color:var(--gold);">CRS</div>
+        <div>
+          <div style="font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--gold);letter-spacing:3px;line-height:1;">CRS</div>
+          <div style="font-family:var(--font-l);font-size:8px;letter-spacing:4px;color:var(--silver);text-transform:uppercase;">— CONSULTING —</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-t">03 · Isotipo (Solo Símbolo)</div>
+        <div class="card-h">Escudo con flecha y barras</div>
+        <p style="font-size:12.5px;margin-bottom:10px;">Para espacios reducidos, avatares de redes sociales, favicon, sellos y aplicaciones donde el nombre no cabe.</p>
+        <span class="tag td">Uso Terciario</span>
+      </div>
+      <div class="logo-box" style="background:#050505;">
+        <div style="width:68px;height:68px;margin:0 auto;border:2px solid var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:28px;color:var(--gold);">◆</div>
+        <div style="font-size:10px;color:var(--text-m);margin-top:12px;font-family:var(--font-l);">Isotipo — solo símbolo</div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-t">04 · Logotipo (Solo Texto)</div>
+        <div class="card-h">CRS Consulting tipografía pura</div>
+        <p style="font-size:12.5px;margin-bottom:10px;">Para fondos complejos donde el isotipo distrae, documentos legales o uso en texto corrido.</p>
+        <span class="tag td">Uso Especial</span>
+      </div>
+      <div class="logo-box" style="background:#050505;">
+        <div style="font-family:var(--font-d);font-size:36px;font-weight:600;letter-spacing:6px;color:var(--gold);line-height:1;margin-bottom:4px;">CRS</div>
+        <div style="font-family:var(--font-l);font-size:9px;letter-spacing:5px;color:var(--silver);text-transform:uppercase;">— CONSULTING —</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-gold"></div>
+
+  <div class="sec-title">Usos Incorrectos</div>
+  <div class="sec-sub">Prohibiciones absolutas</div>
+  <div class="g2">
+    <div class="wrong"><div class="wrong-l">✕ Nunca rotar el logo</div><p style="font-size:12px;margin:0;color:var(--text-m);">El logo siempre en horizontal o vertical canónico. Sin rotaciones.</p></div>
+    <div class="wrong"><div class="wrong-l">✕ Nunca alterar proporciones</div><p style="font-size:12px;margin:0;color:var(--text-m);">No estirar ni aplastar. Solo escalar de forma proporcional.</p></div>
+    <div class="wrong"><div class="wrong-l">✕ Nunca cambiar los colores</div><p style="font-size:12px;margin:0;color:var(--text-m);">Solo los colores oficiales. No degradados externos ni colores de otra marca.</p></div>
+    <div class="wrong"><div class="wrong-l">✕ Nunca sobre fondos de color</div><p style="font-size:12px;margin:0;color:var(--text-m);">Solo sobre negro, gris oscuro o blanco. No sobre azul, rojo, verde, etc.</p></div>
+    <div class="wrong"><div class="wrong-l">✕ No usar efectos externos</div><p style="font-size:12px;margin:0;color:var(--text-m);">Sin sombras, brillos, reflejos ni efectos 3D añadidos externamente.</p></div>
+    <div class="wrong"><div class="wrong-l">✕ Respetar área de seguridad</div><p style="font-size:12px;margin:0;color:var(--text-m);">Mínimo 1× la altura de la «C» libre alrededor del logo en todo momento.</p></div>
+  </div>
+
+  <div class="div"></div>
+  <div class="sec-title">Tabla de Uso por Contexto</div>
+  <table>
+    <thead><tr><th>Contexto</th><th>Versión</th><th>Fondo</th><th>Formato</th></tr></thead>
+    <tbody>
+      <tr><td>Portada de propuesta</td><td>Logo principal vertical</td><td>Negro</td><td>SVG/PNG alta res</td></tr>
+      <tr><td>Firma de email</td><td>Logo horizontal</td><td>Blanco cálido</td><td>PNG 2x</td></tr>
+      <tr><td>Perfil LinkedIn empresa</td><td>Isotipo escudo</td><td>Negro</td><td>PNG cuadrado 400px</td></tr>
+      <tr><td>Presentación PowerPoint</td><td>Logo horizontal</td><td>Negro o blanco</td><td>SVG/PNG</td></tr>
+      <tr><td>Tarjeta de visita</td><td>Logo principal vertical</td><td>Negro</td><td>Vector EPS/PDF</td></tr>
+      <tr><td>Favicon / App icon</td><td>Isotipo</td><td>Negro</td><td>SVG 32px</td></tr>
+      <tr><td>Documentos internos</td><td>Logo horizontal pequeño</td><td>Blanco</td><td>PNG 1x</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══════════ 3. APLICACIÓN ══════════ -->
+<div id="applic" class="page">
+  <div class="eyebrow">Documento 03 · Aplicación de Marca</div>
+  <div class="page-title">Guía de <span>Aplicación</span></div>
+  <div class="page-sub">Cómo aplicar la marca CRS Consulting en cada canal y soporte.</div>
+
+  <div class="sec-title">LinkedIn — Canal Principal</div>
+  <div class="sec-sub">Presencia digital prioritaria</div>
+
+  <div class="card card-gold">
+    <div class="card-t">Estrategia LinkedIn</div>
+    <p>LinkedIn es el único canal prioritario de CRS Consulting en fase de lanzamiento. El cliente objetivo (directivos y propietarios de PYMEs) vive ahí. Todo el contenido proyecta autoridad, conocimiento ejecutivo y resultados reales.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Elemento</th><th>Especificación</th></tr></thead>
+    <tbody>
+      <tr><td>Foto de perfil empresa</td><td>Isotipo CRS sobre fondo negro · PNG 400×400px</td></tr>
+      <tr><td>Imagen de portada</td><td>1584×396px · Fondo negro · Logo horizontal derecha · Tagline izquierda</td></tr>
+      <tr><td>Tagline en el perfil</td><td>«Tu empresa funciona. Tú diriges.» — literal, sin variaciones</td></tr>
+      <tr><td>Tono de posts</td><td>Ejecutivo, directo, sin emojis en exceso. Datos concretos. Opinión experta de empresa.</td></tr>
+      <tr><td>Formato de posts</td><td>Texto estructurado o carrusel negro/oro. Sin fondos de colores aleatorios.</td></tr>
+      <tr><td>Frecuencia mínima</td><td>3 posts por semana · 1 artículo largo por mes</td></tr>
+      <tr><td>Sobre quién publica</td><td>La empresa CRS Consulting — no Cristhiam a título personal</td></tr>
+    </tbody>
+  </table>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Sitio Web</div>
+  <div class="sec-sub">Estructura mínima y especificaciones</div>
+  <div class="g2">
+    <div class="card card-gold">
+      <div class="card-t">Estructura Mínima del Sitio</div>
+      <ul class="cklist">
+        <li class="cki">Home — Tagline + problema que resuelve + CTA</li>
+        <li class="cki">Servicios — Los 6 con nombre comercial y beneficio</li>
+        <li class="cki">Metodología — Proceso en 4 fases</li>
+        <li class="cki">Resultados — Casos sin datos confidenciales</li>
+        <li class="cki">Sobre CRS — Perfil empresa + equipo</li>
+        <li class="cki">Contacto — Formulario + WhatsApp Business</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">Especificaciones Web</div>
+      <table style="margin:0;font-size:12px;">
+        <tr><td style="padding:5px 8px;color:var(--gold);">Background</td><td style="padding:5px 8px;">#080808</td></tr>
+        <tr><td style="padding:5px 8px;color:var(--gold);">Acento</td><td style="padding:5px 8px;">#C9A84C</td></tr>
+        <tr><td style="padding:5px 8px;color:var(--gold);">H1</td><td style="padding:5px 8px;">Cormorant Garamond 300</td></tr>
+        <tr><td style="padding:5px 8px;color:var(--gold);">Body</td><td style="padding:5px 8px;">Montserrat 14px 300</td></tr>
+        <tr><td style="padding:5px 8px;color:var(--gold);">CTA primario</td><td style="padding:5px 8px;">Fondo oro · texto negro</td></tr>
+        <tr><td style="padding:5px 8px;color:var(--gold);">CTA secundario</td><td style="padding:5px 8px;">Borde oro 1px · texto oro</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Firma de Email</div>
+  <div class="sec-sub">Estructura oficial para todo el equipo</div>
+  <div class="email-sig">
+    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#C9A84C;letter-spacing:3px;margin-bottom:1px;">CRS CONSULTING</div>
+    <div style="font-size:9px;letter-spacing:3px;color:#888;font-family:Arial;text-transform:uppercase;margin-bottom:2px;">— Strategic Business Consulting —</div>
+    <div style="font-size:11px;font-style:italic;color:#888;font-family:Georgia,serif;margin-bottom:12px;">Tu empresa funciona. Tú diriges.</div>
+    <div style="font-size:13px;font-weight:700;color:#1a1a1a;font-family:Arial;margin-bottom:2px;">[Nombre del consultor]</div>
+    <div style="font-size:11px;color:#555;font-family:Arial;margin-bottom:12px;">[Rol] · CRS Consulting</div>
+    <div style="border-top:1px solid #C9A84C;padding-top:9px;font-size:11px;color:#555;font-family:Arial;line-height:1.9;">
+      <div>✆ +[número]</div>
+      <div>✉ [nombre]@crsconsulting.com</div>
+      <div>🌐 www.crsconsulting.com</div>
+      <div>in linkedin.com/company/crs-consulting</div>
+    </div>
+    <div style="border-top:1px solid #eee;margin-top:10px;padding-top:7px;font-size:9px;color:#aaa;font-family:Arial;">Este mensaje es confidencial y exclusivo para el destinatario. España · Europa · Arabia Saudita</div>
+  </div>
+</div>
+
+
+<!-- ══════════ 4. PLANTILLAS ══════════ -->
+<div id="templates" class="page">
+  <div class="eyebrow">Documento 04 · Plantillas</div>
+  <div class="page-title">Plantillas <span>Corporativas</span></div>
+  <div class="page-sub">Estructura y especificaciones de todas las plantillas de CRS Consulting.</div>
+
+  <div class="sec-title">Presentación Empresarial</div>
+  <div class="sec-sub">Arquitectura de slides para propuestas e institucional</div>
+
+  <table>
+    <thead><tr><th>#</th><th>Slide</th><th>Contenido</th><th>Visual</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--gold)">01</td><td>Portada</td><td>Logo CRS · Tagline «Tu empresa funciona. Tú diriges.» · Nombre cliente o evento</td><td>Fondo negro, línea oro</td></tr>
+      <tr><td style="color:var(--gold)">02</td><td>El Problema</td><td>El dolor concreto que resuelve CRS (adaptado al cliente)</td><td>Número grande en oro</td></tr>
+      <tr><td style="color:var(--gold)">03</td><td>Quiénes somos</td><td>CRS Consulting en 3 líneas. Enfoque en qué hacemos y para quién.</td><td>Texto + divider oro</td></tr>
+      <tr><td style="color:var(--gold)">04</td><td>Nuestros servicios</td><td>Los 6 servicios con nombre comercial en grid visual</td><td>Grid 6 cards</td></tr>
+      <tr><td style="color:var(--gold)">05</td><td>Metodología</td><td>Cómo trabajamos — 4 fases del proceso</td><td>Timeline horizontal</td></tr>
+      <tr><td style="color:var(--gold)">06</td><td>Resultados</td><td>KPIs o casos reales (sin datos confidenciales)</td><td>Números grandes</td></tr>
+      <tr><td style="color:var(--gold)">07</td><td>Equipo</td><td>CRS Consulting · equipo con experiencia sólida</td><td>Grid de perfiles</td></tr>
+      <tr><td style="color:var(--gold)">08</td><td>Siguiente paso</td><td>CTA claro: diagnóstico gratuito, reunión o propuesta</td><td>CTA en oro</td></tr>
+      <tr><td style="color:var(--gold)">09</td><td>Cierre</td><td>Logo + tagline + datos de contacto</td><td>Fondo negro puro</td></tr>
+    </tbody>
+  </table>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Estructura de Propuesta Comercial</div>
+  <div class="sec-sub">El documento que cierra proyectos</div>
+
+  <div class="card card-gold">
+    <div class="card-t">Principio Inamovible</div>
+    <p>Una propuesta de CRS Consulting no es un catálogo de servicios. Es un diagnóstico del problema del cliente y la solución concreta que vamos a ejecutar. <strong style="color:var(--gold);">Se personaliza por cliente.</strong> Nunca se envía una propuesta genérica.</p>
+  </div>
+
+  <ol class="steps">
+    <li class="step"><div class="step-n">01</div><div class="step-c"><strong>Portada confidencial</strong>Logo CRS · «Propuesta Estratégica» · Nombre del cliente · Fecha · Referencia · «CONFIDENCIAL»</div></li>
+    <li class="step"><div class="step-n">02</div><div class="step-c"><strong>Resumen ejecutivo (1 página máx.)</strong>Diagnóstico del problema en 3 puntos. Qué vamos a hacer. Resultado esperado. Tiempo. Sin tecnicismos.</div></li>
+    <li class="step"><div class="step-n">03</div><div class="step-c"><strong>Diagnóstico de situación actual</strong>Problemas identificados en la discovery call. Impacto económico actual. Coste de no actuar.</div></li>
+    <li class="step"><div class="step-n">04</div><div class="step-c"><strong>Propuesta de solución</strong>Servicio concreto (con nombre comercial). Fases del proyecto. Entregables específicos. Lo que el cliente ve al final.</div></li>
+    <li class="step"><div class="step-n">05</div><div class="step-c"><strong>Metodología y proceso</strong>Cómo trabajamos. Calendario. Dedicación requerida al cliente (máx. 2–3h/semana).</div></li>
+    <li class="step"><div class="step-n">06</div><div class="step-c"><strong>Inversión y condiciones</strong>Precio total. Modelo de pago. Condiciones de inicio. Validez de la propuesta (7 días naturales).</div></li>
+    <li class="step"><div class="step-n">07</div><div class="step-c"><strong>Próximos pasos</strong>Exactamente qué tiene que hacer el cliente para empezar. Un solo paso, sin fricción.</div></li>
+  </ol>
+</div>
+
+
+<!-- ══════════ 5. SERVICIOS ══════════ -->
+<div id="services" class="page">
+  <div class="eyebrow">Documento 05 · Cartera de Servicios</div>
+  <div class="page-title">Los 6 <span>Servicios</span></div>
+  <div class="page-sub">Arquitectura completa con precios, procedimiento y entregables. Cada servicio es vendible, ejecutable y delegable.</div>
+
+  <!-- ── NEXUS COMERCIAL ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 01</div>
+        <div class="svc-name">Nexus Comercial</div>
+        <div class="svc-code">Closer B2B · Conexión entre empresas para generar ventas</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Tarifa</div>
+        <div class="pb-range">8–15%</div>
+        <div class="pb-model">por venta cerrada + setup €800–1.500</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Paquete / Servicio</div>
+        <div class="svc-grid">
+          <div class="info-box"><div class="ib-label">Objetivo</div><p>Conectar productos y servicios de una empresa con los compradores adecuados de otra, generando ventas reales mediante un proceso comercial estructurado y closers entrenados.</p></div>
+          <div class="info-box"><div class="ib-label">Problema que resuelve</div><p>El cliente tiene un buen producto pero no sabe venderlo a otras empresas. No tiene proceso comercial B2B, no tiene closers ni sistema de seguimiento. Las ventas dependen del dueño o no existen.</p></div>
+          <div class="info-box"><div class="ib-label">Cliente ideal</div><p>Empresas con producto/servicio demostrado (ticket €1.000+) que quieren escalar ventas B2B sin contratar un equipo comercial propio desde cero.</p></div>
+          <div class="info-box"><div class="ib-label">Entregable</div><p>Sistema de cierre documentado + guión adaptado al producto + protocolo de seguimiento + gestión activa de leads + reporte mensual de resultados.</p></div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Procedimiento</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-t">Fase 1 — Auditoría comercial</div><div class="tl-d">Análisis del proceso de venta actual, puntos de fuga, perfil de cliente ideal y producto. Revisión de materiales de venta existentes.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 2 — Diseño del sistema de ventas</div><div class="tl-d">Creación del guión de ventas B2B por fases, protocolo de seguimiento, CRM mínimo viable y criterios de cualificación de leads.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 3 — Activación y ejecución</div><div class="tl-d">Lanzamiento del sistema con leads reales. Gestión activa de pipeline. Calibración del guión en base a los primeros cierres.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 4 — Optimización continua</div><div class="tl-d">Revisión mensual de KPIs (conversión, ticket medio, ciclo). Ajuste de guión y proceso. Reporting al cliente.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Modelo de precio</div>
+        <table style="margin:0;">
+          <thead><tr><th>Escenario</th><th>Comisión</th><th>Mínimo/cierre</th><th>Setup inicial</th></tr></thead>
+          <tbody>
+            <tr><td>Ticket bajo (&lt;€1.000), ciclo corto, producto simple</td><td style="color:var(--green);">8%</td><td>€600</td><td>€800</td></tr>
+            <tr><td>Ticket medio (€1.000–5.000), ciclo medio</td><td style="color:var(--amber);">10%</td><td>€800</td><td>€1.200</td></tr>
+            <tr><td>Ticket alto (&gt;€5.000), ciclo largo, sector técnico o exclusividad</td><td style="color:var(--red-c);">12–15%</td><td>€1.200</td><td>€1.500</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ARQUITECTURA OPERATIVA ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 02 · Servicio de Entrada</div>
+        <div class="svc-name">Arquitectura Operativa</div>
+        <div class="svc-code">Protocolización y estandarización del funcionamiento interno</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Inversión</div>
+        <div class="pb-range">€2.500 – €12.000</div>
+        <div class="pb-model">Proyecto cerrado · 50% inicio / 50% entrega</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Paquete / Servicio</div>
+        <div class="svc-grid">
+          <div class="info-box"><div class="ib-label">Objetivo</div><p>Documentar y estandarizar el funcionamiento interno para que la empresa opere con consistencia sin depender de personas concretas.</p></div>
+          <div class="info-box"><div class="ib-label">Problema que resuelve</div><p>«Todo está en la cabeza de [persona]». Sin protocolos, cada tarea se hace diferente. No se puede delegar, no se puede escalar, no se puede auditar.</p></div>
+          <div class="info-box"><div class="ib-label">Cliente ideal</div><p>PYME española 5–100 empleados que ha crecido sin documentar nada. El propietario es el cuello de botella de todo. Alta rotación de personal. Quiere poder delegar.</p></div>
+          <div class="info-box"><div class="ib-label">Entregables</div><p>Manual de operaciones por área + fichas de proceso (1 pág.) + checklists diario/semanal/mensual + matriz RACI + manual de incorporación.</p></div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Procedimiento</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-t">Fase 1 — Mapeo operativo</div><div class="tl-d">Identificar todas las áreas clave. Entrevistar a responsables. Documentar cómo se hacen las cosas HOY sin juicios de valor.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 2 — Diagnóstico de gaps</div><div class="tl-d">Detectar procesos sin documentar, dependencias críticas de persona, cuellos de botella. Priorizar por impacto en el negocio.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 3 — Redacción de protocolos</div><div class="tl-d">Crear documentos por área: quién hace qué, cómo, cuándo, con qué herramientas, qué entrega. Lenguaje claro, formato estándar CRS.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 4 — Implantación y cierre</div><div class="tl-d">Formación al equipo sobre el sistema. Período de seguimiento 2–4 semanas. Ajustes finales. Entrega del sistema completo.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Escala de precio</div>
+        <table style="margin:0;">
+          <thead><tr><th>Tamaño empresa</th><th>Áreas cubiertas</th><th>Precio</th><th>Duración</th></tr></thead>
+          <tbody>
+            <tr><td>Microempresa &lt;10 personas</td><td>1–2 áreas</td><td style="color:var(--green);">€2.500 – €4.000</td><td>3–5 semanas</td></tr>
+            <tr><td>PYME 10–50 personas</td><td>3–5 áreas</td><td style="color:var(--amber);">€4.000 – €8.000</td><td>6–10 semanas</td></tr>
+            <tr><td>PYME grande 50–100</td><td>Empresa completa</td><td style="color:var(--red-c);">€8.000 – €12.000</td><td>10–14 semanas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MOTOR DE PROCESOS ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 03</div>
+        <div class="svc-name">Motor de Procesos</div>
+        <div class="svc-code">Diseño de procesos operativos desde cero</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Inversión</div>
+        <div class="pb-range">€3.500 – €16.000</div>
+        <div class="pb-model">Proyecto cerrado · 50% inicio / 50% entrega</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Diferencia clave con Arquitectura Operativa</div>
+        <div class="card" style="margin:0;padding:16px 20px;">
+          <p style="margin:0;font-size:13px;"><strong style="color:var(--gold)">Arquitectura Operativa</strong> documenta lo que ya existe. <strong style="color:var(--gold)">Motor de Procesos</strong> diseña desde cero lo que debería existir. Se aplica a empresas nuevas, en reestructuración total o lanzando una nueva línea de negocio.</p>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Procedimiento</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-t">Fase 1 — Análisis del modelo de negocio</div><div class="tl-d">Entender qué vende, cómo lo entrega, a quién, con qué recursos. Mapear la cadena de valor completa.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 2 — Mapa de procesos</div><div class="tl-d">Identificar y clasificar todos los procesos necesarios: estratégicos, operativos y de soporte. Definir jerarquía y prioridad.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 3 — Diseño detallado</div><div class="tl-d">Para cada proceso: inputs, outputs, responsable, pasos, herramientas, indicadores de calidad y criterios de éxito.</div></div>
+          <div class="tl-item"><div class="tl-t">Fase 4 — Implantación piloto</div><div class="tl-d">Activar en modo prueba, medir, ajustar y escalar. Entrega del sistema completo con formación.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Escala de precio</div>
+        <table style="margin:0;">
+          <thead><tr><th>Escenario</th><th>Procesos diseñados</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td>Empresa nueva / modelo simple</td><td>Hasta 5 procesos clave</td><td style="color:var(--green);">€3.500 – €6.000</td></tr>
+            <tr><td>Reestructuración parcial</td><td>6 a 12 procesos</td><td style="color:var(--amber);">€6.000 – €11.000</td></tr>
+            <tr><td>Reestructuración completa o sector regulado</td><td>13+ procesos o implantación guiada</td><td style="color:var(--red-c);">€11.000 – €16.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CRS COMMAND ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 04</div>
+        <div class="svc-name">CRS Command</div>
+        <div class="svc-code">Gestión eficiente · Sistema de control para directivos</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Retainer mensual</div>
+        <div class="pb-range">€1.800 – €4.500</div>
+        <div class="pb-model">Mínimo 3 meses · cobro días 1–5</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Paquete / Servicio</div>
+        <div class="svc-grid">
+          <div class="info-box"><div class="ib-label">Objetivo</div><p>Optimizar la forma en que el directivo gestiona su empresa: toma de decisiones, control operativo, reuniones, reporting y uso del tiempo.</p></div>
+          <div class="info-box"><div class="ib-label">Problema que resuelve</div><p>El director lo hace todo, está en todo, decide todo. Sin sistema de gestión la empresa no crece. Reuniones eternas. Sin métricas. Sin delegación real.</p></div>
+          <div class="info-box"><div class="ib-label">Cliente ideal</div><p>Directivos de empresas €500K–5M que sienten que no tienen tiempo. Todo depende de ellos. No pueden crecer más sin colapsar.</p></div>
+          <div class="info-box"><div class="ib-label">Entregables</div><p>Sistema de gestión semanal/mensual + dashboard de KPIs + estructura de reuniones + mapa de delegación + protocolo de decisiones.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Escala de precio mensual</div>
+        <table style="margin:0;">
+          <thead><tr><th>Nivel</th><th>Incluye</th><th>Retainer/mes</th></tr></thead>
+          <tbody>
+            <tr><td>Base — empresa pequeña</td><td>Reunión mensual + 2 áreas + reporting básico</td><td style="color:var(--green);">€1.800</td></tr>
+            <tr><td>Estándar — empresa mediana</td><td>2 reuniones/mes + 3–4 áreas + informe KPIs</td><td style="color:var(--amber);">€2.800</td></tr>
+            <tr><td>Premium — acceso alto</td><td>Reunión semanal + empresa completa + dashboard</td><td style="color:var(--red-c);">€4.500</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CRS HOSPITALITY ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 05 · Servicio Extra Premium</div>
+        <div class="svc-name">CRS Hospitality</div>
+        <div class="svc-code">Protocolización hotelera de alto nivel</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Inversión</div>
+        <div class="pb-range">€6.000 – €25.000</div>
+        <div class="pb-model">Proyecto cerrado · por departamentos</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Paquete / Servicio</div>
+        <div class="svc-grid">
+          <div class="info-box"><div class="ib-label">Objetivo</div><p>Implementar sistemas de excelencia operativa en hoteles 4 y 5 estrellas. Estandarizar la experiencia del huésped y los procesos internos por departamento.</p></div>
+          <div class="info-box"><div class="ib-label">Mercado objetivo</div><p>España (fase 1). Europa (fase 2). Arabia Saudita — Vision 2030, hoteles de lujo en expansión (fase 3 de alto valor).</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Escala de precio</div>
+        <table style="margin:0;">
+          <thead><tr><th>Tipo de hotel</th><th>Alcance</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td>Hotel boutique / 3 estrella superior</td><td>2–3 departamentos</td><td style="color:var(--green);">€6.000 – €10.000</td></tr>
+            <tr><td>Hotel 4 estrellas</td><td>4–5 departamentos</td><td style="color:var(--amber);">€10.000 – €18.000</td></tr>
+            <tr><td>Hotel 5 estrellas / cadena / internacional</td><td>Hotel completo + multiidioma</td><td style="color:var(--red-c);">€18.000 – €25.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CRS BLUEPRINT ── -->
+  <div class="svc-block">
+    <div class="svc-head">
+      <div>
+        <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:var(--font-l);margin-bottom:5px;">Pilar 06 · Servicio Flagship</div>
+        <div class="svc-name">CRS Blueprint</div>
+        <div class="svc-code">Arquitectura global de empresa · El servicio más completo</div>
+      </div>
+      <div class="price-badge">
+        <div class="pb-label">Inversión</div>
+        <div class="pb-range">€8.000 – €35.000</div>
+        <div class="pb-model">Proyecto o 3 fases · según complejidad</div>
+      </div>
+    </div>
+    <div class="svc-body">
+      <div style="margin-bottom:20px;">
+        <div class="svc-sec-label">Paquete / Servicio</div>
+        <div class="svc-grid">
+          <div class="info-box"><div class="ib-label">Objetivo</div><p>Construir o reconstruir la arquitectura completa del negocio: modelo de servicio, estructura comercial, operaciones, equipo y sistema de control.</p></div>
+          <div class="info-box"><div class="ib-label">Problema que resuelve</div><p>Empresas que funcionan pero no escalan. Tienen facturación pero no estructura. Crecen en caos. No pueden prepararse para inversión, venta o expansión.</p></div>
+          <div class="info-box"><div class="ib-label">Cliente ideal</div><p>Empresas €500K–5M con ambición de escalar, franquiciar, vender o entrar a inversión. El fundador quiere que la empresa funcione sin él.</p></div>
+          <div class="info-box"><div class="ib-label">Entregables</div><p>Sistema completo: modelo documentado + procesos + estructura comercial + sistema de gestión + manual operativo maestro + plan de escala.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="svc-sec-label">Escala de precio</div>
+        <table style="margin:0;">
+          <thead><tr><th>Escenario</th><th>Facturación empresa</th><th>Precio</th><th>Opción fases</th></tr></thead>
+          <tbody>
+            <tr><td>Empresa inicial · modelo simple</td><td>&lt;€500K</td><td style="color:var(--green);">€8.000 – €12.000</td><td>€3K / €4K / €5K</td></tr>
+            <tr><td>PYME en crecimiento</td><td>€500K – €3M</td><td style="color:var(--amber);">€12.000 – €22.000</td><td>€4K / €8K / €10K</td></tr>
+            <tr><td>Empresa compleja o expansión</td><td>&gt;€3M</td><td style="color:var(--red-c);">€22.000 – €35.000</td><td>Personalizado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ 6. OPERACIONES ══════════ -->
+<div id="ops" class="page">
+  <div class="eyebrow">Documento 06 · Sistema Operativo</div>
+  <div class="page-title">Operaciones <span>Internas</span></div>
+  <div class="page-sub">Cómo funciona CRS Consulting por dentro. Flujos, roles, delegación y control de calidad.</div>
+
+  <div class="kpi-grid">
+    <div class="kpi-cell"><div class="kpi-v">48h</div><div class="kpi-l">Diagnóstico → propuesta</div></div>
+    <div class="kpi-cell"><div class="kpi-v">50%</div><div class="kpi-l">Cobro al inicio siempre</div></div>
+    <div class="kpi-cell"><div class="kpi-v">100%</div><div class="kpi-l">Proyectos con KPIs definidos</div></div>
+  </div>
+
+  <div class="sec-title">Estructura de Roles</div>
+  <div class="sec-sub">Quién hace qué en CRS Consulting</div>
+
+  <div class="role-card">
+    <div class="role-icon">★</div>
+    <div>
+      <div style="font-family:var(--font-l);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:4px;">Cristhiam — Director General · Estratega · Decisor</div>
+      <p style="margin:0;font-size:13px;">Supervisión estratégica de proyectos, aprobación final de propuestas y precios, relación con clientes clave, decisiones de equipo, visión de empresa. <strong style="color:var(--gold);">No ejecuta operaciones del día a día.</strong> Su tiempo es estratégico, no táctico.</p>
+    </div>
+  </div>
+  <div class="role-card">
+    <div class="role-icon">◆</div>
+    <div>
+      <div style="font-family:var(--font-l);font-size:13px;font-weight:700;color:var(--silver);margin-bottom:4px;">Consultor/a Senior de Proyecto</div>
+      <p style="margin:0;font-size:13px;">Ejecución técnica de los proyectos, diagnósticos, creación de protocolos y procesos, gestión de la relación operativa con el cliente, entrega de resultados bajo los estándares CRS.</p>
+    </div>
+  </div>
+  <div class="role-card">
+    <div class="role-icon">▲</div>
+    <div>
+      <div style="font-family:var(--font-l);font-size:13px;font-weight:700;color:var(--silver);margin-bottom:4px;">Comercial / Closer de Ventas CRS</div>
+      <p style="margin:0;font-size:13px;">Prospección, gestión de leads entrantes, discovery calls, presentación de propuestas, cierre de contratos. Opera bajo el sistema comercial definido. KPI principal: 3 discovery calls/semana mínimo.</p>
+    </div>
+  </div>
+  <div class="role-card">
+    <div class="role-icon">○</div>
+    <div>
+      <div style="font-family:var(--font-l);font-size:13px;font-weight:700;color:var(--text-s);margin-bottom:4px;">Asistente Operativo / Admin</div>
+      <p style="margin:0;font-size:13px;">Gestión de agenda, preparación de documentos, seguimiento de tareas, coordinación logística, administración de herramientas digitales y CRM.</p>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Flujo de Trabajo — Del Lead al Cierre</div>
+  <div class="sec-sub">El proceso completo en 6 pasos</div>
+
+  <ol class="steps">
+    <li class="step"><div class="step-n">01</div><div class="step-c"><strong>Captación del lead</strong>Entra por LinkedIn, referido, web o outreach. El comercial califica en <strong style="color:var(--gold);">≤24h</strong>. Criterio mínimo: empresa con mínimo 5 empleados, presupuesto demostrable, problema real identificable.</div></li>
+    <li class="step"><div class="step-n">02</div><div class="step-c"><strong>Discovery Call (60 min)</strong>El comercial o Cristhiam. Objetivo: detectar el problema real, validar ajuste con CRS, confirmar capacidad de inversión. Cierra con: «¿Quieres que preparemos una propuesta?»</div></li>
+    <li class="step"><div class="step-n">03</div><div class="step-c"><strong>Propuesta personalizada (48h)</strong>El consultor senior elabora. Cristhiam revisa y aprueba. Presentación al cliente por videollamada — nunca solo por email.</div></li>
+    <li class="step"><div class="step-n">04</div><div class="step-c"><strong>Cierre y onboarding</strong>Firma del contrato + 50% del pago inicial. Envío de cuestionario de onboarding. Primera reunión de arranque con consultor + Cristhiam presente.</div></li>
+    <li class="step"><div class="step-n">05</div><div class="step-c"><strong>Ejecución del proyecto</strong>El consultor ejecuta según el plan. Reunión semanal de seguimiento con el cliente. Cristhiam recibe informe de estado quincenal. Todo documentado en Notion/ClickUp.</div></li>
+    <li class="step"><div class="step-n">06</div><div class="step-c"><strong>Entrega, cierre y referido</strong>Presentación de entregables finales. Validación. Cobro del 50% restante. Informe de cierre. Proceso de referido activo: «¿Conoces a alguien con el mismo problema?»</div></li>
+  </ol>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Delegación — Qué hace y qué no hace Cristhiam</div>
+  <div class="g2">
+    <div class="card card-gold">
+      <div class="card-t">Cristhiam delega</div>
+      <ul class="cklist">
+        <li class="cki">Ejecución técnica de protocolos y procesos</li>
+        <li class="cki">Reuniones de seguimiento semanal con el cliente</li>
+        <li class="cki">Prospección y primera cualificación de leads</li>
+        <li class="cki">Gestión de agenda y comunicación rutinaria</li>
+        <li class="cki">Redacción de documentos internos</li>
+        <li class="cki">Administración de herramientas y CRM</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t">Cristhiam NO delega</div>
+      <ul class="cklist">
+        <li class="cki">Aprobación de propuestas y precios finales</li>
+        <li class="cki">Decisiones de contratación de equipo</li>
+        <li class="cki">Cierre con clientes de alto valor (Blueprint, Hospitality)</li>
+        <li class="cki">Revisión final de todos los entregables</li>
+        <li class="cki">Visión estratégica y posicionamiento de empresa</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Herramientas del Sistema Operativo</div>
+  <table>
+    <thead><tr><th>Función</th><th>Herramienta</th><th>Responsable</th></tr></thead>
+    <tbody>
+      <tr><td>Gestión de proyectos</td><td>Notion o ClickUp (un espacio por cliente)</td><td>Consultor Senior</td></tr>
+      <tr><td>CRM de ventas</td><td>HubSpot Free o Pipedrive</td><td>Comercial</td></tr>
+      <tr><td>Comunicación interna</td><td>Slack (canales por proyecto)</td><td>Todo el equipo</td></tr>
+      <tr><td>Documentación</td><td>Google Drive (estructura por cliente)</td><td>Asistente Admin</td></tr>
+      <tr><td>Reuniones y calls</td><td>Google Meet o Zoom</td><td>Cada consultor</td></tr>
+      <tr><td>Firma de contratos</td><td>DocuSign o Adobe Sign</td><td>Asistente Admin</td></tr>
+      <tr><td>Facturación</td><td>Holded o Factorial</td><td>Asistente Admin</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══════════ 7. COMERCIAL ══════════ -->
+<div id="sales" class="page">
+  <div class="eyebrow">Documento 07 · Sistema Comercial</div>
+  <div class="page-title">Sistema de <span>Ventas</span></div>
+  <div class="page-sub">Cómo vende CRS Consulting. Posicionamiento, discurso, objeciones y captación.</div>
+
+  <div class="qblock">
+    <p>«No somos una consultora que te dice lo que tienes que hacer. Somos el equipo que construye contigo el sistema que hace que tu empresa funcione sola.»</p>
+  </div>
+
+  <div class="sec-title">Posicionamiento Comercial</div>
+  <div class="sec-sub">Los 3 pilares del discurso de venta</div>
+
+  <div class="g3">
+    <div class="card card-gold">
+      <div class="card-t">Autoridad de marca</div>
+      <p style="margin:0;font-size:12.5px;">CRS no compite en precio. El cliente percibe que habla con expertos que ya han resuelto este problema en otras empresas. La marca (no una persona) da la credibilidad.</p>
+    </div>
+    <div class="card card-gold">
+      <div class="card-t">Especificidad del problema</div>
+      <p style="margin:0;font-size:12.5px;">Nunca vendemos «consultoría». Vendemos la solución al problema concreto del cliente: «tu proceso de ventas pierde el 70% de los leads — vamos a cambiar eso en 60 días».</p>
+    </div>
+    <div class="card card-gold">
+      <div class="card-t">Premium sin disculpa</div>
+      <p style="margin:0;font-size:12.5px;">El precio no se justifica — se defiende con ROI. Si el cliente pregunta «¿por qué tan caro?» la respuesta es el valor generado, nunca el descuento.</p>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Guión de Discovery Call — 60 minutos</div>
+  <div class="sec-sub">Estructura exacta del comercial</div>
+
+  <ol class="steps">
+    <li class="step">
+      <div class="step-n">1</div>
+      <div class="step-c">
+        <strong>Apertura — Establecer agenda (2 min)</strong>
+        <div class="script-block" style="margin-top:8px;">
+          <div class="script-tag">Guión</div>
+          <p class="script-text">«Gracias por tu tiempo. Lo que voy a hacer en los próximos 45 minutos es entender cómo funciona tu empresa ahora mismo. Según lo que me cuentes, si veo que CRS puede ayudarte, te digo cómo y qué implicaría. Si no es el ajuste adecuado, también te lo digo. ¿Te parece bien?»</p>
+        </div>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-n">2</div>
+      <div class="step-c">
+        <strong>Diagnóstico — El problema real (20 min)</strong>
+        <div class="card" style="margin-top:8px;padding:16px 20px;">
+          <div class="card-t">Preguntas clave — en este orden</div>
+          <ul class="cklist">
+            <li class="cki">«¿Cuál es el principal freno para que tu empresa crezca ahora mismo?»</li>
+            <li class="cki">«¿Qué pasa cuando intentas delegar una tarea importante?»</li>
+            <li class="cki">«¿Si no resuelves esto en 6 meses, qué pasa con tu empresa?»</li>
+            <li class="cki">«¿Lo has intentado resolver antes? ¿Qué pasó?»</li>
+            <li class="cki">«¿Cuánto te está costando este problema económicamente ahora mismo?»</li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-n">3</div>
+      <div class="step-c">
+        <strong>Presentación de la solución (15 min)</strong>
+        <div class="script-block" style="margin-top:8px;">
+          <div class="script-tag">Estructura</div>
+          <p class="script-text">«Basándome en lo que me has contado, tu problema central es [X]. Lo que haríamos desde CRS es [servicio con nombre] en [tiempo]. Al final del proyecto tendrías [resultado concreto]. ¿Esto es lo que necesitas?»</p>
+        </div>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-n">4</div>
+      <div class="step-c">
+        <strong>Cierre y siguiente paso (5 min)</strong>
+        <div class="script-block" style="margin-top:8px;">
+          <div class="script-tag">Cierre</div>
+          <p class="script-text">«¿Quieres que te preparemos la propuesta detallada? La tienes en 48 horas. La revisamos juntos por videollamada el [día concreto]. ¿A qué hora te va bien?»</p>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Gestión de Objeciones</div>
+  <div class="sec-sub">Las 8 respuestas inamovibles del equipo CRS</div>
+
+  <div class="obj-header"><span>Objeción del cliente</span><span>Respuesta CRS Consulting</span></div>
+  <div class="obj-row"><div class="obj-q">«Es muy caro.»</div><div class="obj-a">«Dime: ¿cuánto te está costando el problema cada mes? Si el proceso de ventas te hace perder 3 clientes de €2.000, son €6.000/mes. El proyecto cuesta €X. ¿Lo ves como coste o como inversión?»</div></div>
+  <div class="obj-row"><div class="obj-q">«Déjame pensarlo.»</div><div class="obj-a">«Perfecto. ¿Qué es exactamente lo que necesitas pensar? Si es el precio, el tiempo o si el proyecto encaja, puedo aclarártelo ahora y tomas la decisión con toda la información.»</div></div>
+  <div class="obj-row"><div class="obj-q">«No tengo tiempo.»</div><div class="obj-a">«Por eso precisamente trabajamos con tu equipo, no con tu tiempo. Tu dedicación es de 2–3 horas semanales. El resto lo ejecutamos nosotros. ¿Eso lo cambia?»</div></div>
+  <div class="obj-row"><div class="obj-q">«Ya lo intentamos internamente.»</div><div class="obj-a">«¿Y qué pasó? [escuchar] La diferencia es que nosotros venimos con el sistema ya diseñado y la experiencia de haberlo implementado en otras empresas. No estáis experimentando desde cero.»</div></div>
+  <div class="obj-row"><div class="obj-q">«¿Garantizan resultados?»</div><div class="obj-a">«Lo que garantizamos es el entregable: el sistema funciona. El resultado depende de que lo apliquéis. Por eso antes de empezar definimos juntos los KPIs de éxito — ambos sabemos qué significa 'éxito'.»</div></div>
+  <div class="obj-row"><div class="obj-q">«¿Por qué CRS y no otro consultor?»</div><div class="obj-a">«Porque no entregamos un informe. Construimos el sistema y lo dejamos funcionando. La mayoría de consultoras entregan un documento; nosotros entregamos una estructura que opera el día siguiente.»</div></div>
+  <div class="obj-row"><div class="obj-q">«No sé si mi equipo lo adoptará.»</div><div class="obj-a">«Es la resistencia más habitual. Por eso el proceso incluye formación y un período de implantación guiada. No entregamos el manual y nos vamos — estamos durante las primeras semanas de adopción.»</div></div>
+  <div class="obj-row"><div class="obj-q">«¿Cuánto tiempo necesito dedicarle?»</div><div class="obj-a">«La reunión inicial de 90 minutos, una reunión semanal de 30 minutos y la validación de entregables. Total: 2–3 horas por semana. Todo lo demás lo gestionamos desde CRS.»</div></div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">Canales de Captación</div>
+  <div class="sec-sub">Los 4 canales de generación de clientes</div>
+
+  <div class="g2">
+    <div class="card card-gold">
+      <div class="card-t">Canal 01 — LinkedIn (Principal)</div>
+      <p>Contenido de autoridad desde la cuenta empresa. Resultados reales, errores comunes de directivos, casos sin datos confidenciales. DM directo a decisores cualificados. Objetivo: 3 posts/semana + 10 contactos directos/semana.</p>
+    </div>
+    <div class="card card-gold">
+      <div class="card-t">Canal 02 — Referidos</div>
+      <p>Cada cliente cerrado recibe una propuesta de referido activo. Si presenta un contacto que contrata, recibe descuento en la siguiente fase o un informe adicional. El mejor canal a medio plazo.</p>
+    </div>
+    <div class="card">
+      <div class="card-t">Canal 03 — Outreach Directo</div>
+      <p>El comercial hace outreach sistematizado: 20 empresas/semana cualificadas. Mensaje corto y personalizado enfocado en el problema — no en CRS. Objetivo: 3 discovery calls/semana por comercial.</p>
+    </div>
+    <div class="card">
+      <div class="card-t">Canal 04 — Alianzas</div>
+      <p>Gestorías, abogados, agencias de marketing que trabajan con PYMEs. Acuerdos de referido mutuo. Presentación institucional de CRS como soporte operativo para sus clientes comunes.</p>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sec-title">KPIs del Equipo Comercial</div>
+  <table>
+    <thead><tr><th>KPI</th><th>Objetivo mensual</th><th>Mínimo aceptable</th></tr></thead>
+    <tbody>
+      <tr><td>Discovery calls realizadas</td><td>12 calls/mes</td><td>8 calls/mes</td></tr>
+      <tr><td>Propuestas enviadas</td><td>6/mes</td><td>4/mes</td></tr>
+      <tr><td>Tasa de cierre (propuesta → contrato)</td><td>40%</td><td>25%</td></tr>
+      <tr><td>Valor medio de contrato</td><td>€5.000+</td><td>€2.500</td></tr>
+      <tr><td>Ciclo de venta (contacto → firma)</td><td>14 días</td><td>21 días</td></tr>
+      <tr><td>Clientes con ampliación o repetición</td><td>40%</td><td>20%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card card-gold" style="margin-top:28px;">
+    <div class="card-t">Regla de Oro</div>
+    <div style="font-family:var(--font-d);font-size:22px;color:var(--white);font-weight:300;font-style:italic;line-height:1.4;">«No vendemos consultoría. Vendemos la certeza de que después de trabajar con CRS, la empresa del cliente funciona mejor sin depender de nadie concreto.»</div>
+  </div>
+
+  <div style="height:60px;"></div>
+</div>
+
+</main>
+
+<script>
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const page = document.getElementById(id);
+  if (page) page.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+id+"'")) n.classList.add('active');
+  });
+  document.getElementById('main').scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
